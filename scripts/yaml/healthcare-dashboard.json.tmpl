@@ -1,0 +1,197 @@
+{
+  "displayName": "${DASHBOARD_DISPLAY_NAME}",
+  "mosaicLayout": {
+    "columns": 12,
+    "tiles": [
+      {
+        "xPos": 0, "yPos": 0, "width": 4, "height": 3,
+        "widget": {
+          "title": "Egress denied at the gateway (5 min)",
+          "scorecard": {
+            "timeSeriesQuery": {
+              "timeSeriesFilter": {
+                "filter": "metric.type=\"logging.googleapis.com/user/${EGRESS_DENIAL_METRIC}\"",
+                "aggregation": {
+                  "alignmentPeriod": "300s",
+                  "perSeriesAligner": "ALIGN_DELTA",
+                  "crossSeriesReducer": "REDUCE_SUM"
+                }
+              }
+            },
+            "thresholds": [{"value": 0.5, "color": "RED", "direction": "ABOVE"}]
+          }
+        }
+      },
+      {
+        "xPos": 4, "yPos": 0, "width": 4, "height": 3,
+        "widget": {
+          "title": "Model Armor blocks in the agent (5 min)",
+          "scorecard": {
+            "timeSeriesQuery": {
+              "timeSeriesFilter": {
+                "filter": "metric.type=\"logging.googleapis.com/user/${MODEL_ARMOR_BLOCK_METRIC}\"",
+                "aggregation": {
+                  "alignmentPeriod": "300s",
+                  "perSeriesAligner": "ALIGN_DELTA",
+                  "crossSeriesReducer": "REDUCE_SUM"
+                }
+              }
+            },
+            "thresholds": [{"value": 0.5, "color": "YELLOW", "direction": "ABOVE"}]
+          }
+        }
+      },
+      {
+        "xPos": 8, "yPos": 0, "width": 4, "height": 3,
+        "widget": {
+          "title": "Agent Runtime requests per second",
+          "scorecard": {
+            "timeSeriesQuery": {
+              "timeSeriesFilter": {
+                "filter": "metric.type=\"aiplatform.googleapis.com/reasoning_engine/request_count\" resource.type=\"aiplatform.googleapis.com/ReasoningEngine\"",
+                "aggregation": {
+                  "alignmentPeriod": "60s",
+                  "perSeriesAligner": "ALIGN_RATE",
+                  "crossSeriesReducer": "REDUCE_SUM"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "xPos": 0, "yPos": 3, "width": 6, "height": 4,
+        "widget": {
+          "title": "Gateway egress denials over time (policy tripwire)",
+          "xyChart": {
+            "dataSets": [{
+              "plotType": "STACKED_BAR",
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"logging.googleapis.com/user/${EGRESS_DENIAL_METRIC}\"",
+                  "aggregation": {
+                    "alignmentPeriod": "60s",
+                    "perSeriesAligner": "ALIGN_DELTA",
+                    "crossSeriesReducer": "REDUCE_SUM"
+                  }
+                }
+              }
+            }],
+            "yAxis": {"label": "denials / min", "scale": "LINEAR"}
+          }
+        }
+      },
+      {
+        "xPos": 6, "yPos": 3, "width": 6, "height": 4,
+        "widget": {
+          "title": "Agent Runtime request count by response code",
+          "xyChart": {
+            "dataSets": [{
+              "plotType": "STACKED_BAR",
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"aiplatform.googleapis.com/reasoning_engine/request_count\" resource.type=\"aiplatform.googleapis.com/ReasoningEngine\"",
+                  "aggregation": {
+                    "alignmentPeriod": "60s",
+                    "perSeriesAligner": "ALIGN_DELTA",
+                    "crossSeriesReducer": "REDUCE_SUM",
+                    "groupByFields": ["metric.label.response_code"]
+                  }
+                }
+              }
+            }],
+            "yAxis": {"label": "requests / min", "scale": "LINEAR"}
+          }
+        }
+      },
+      {
+        "xPos": 0, "yPos": 7, "width": 6, "height": 4,
+        "widget": {
+          "title": "Gateway total latency p95 (agent -> tool, incl. IAP + Model Armor callouts)",
+          "xyChart": {
+            "dataSets": [{
+              "plotType": "LINE",
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"networkservices.googleapis.com/agentgateway/total_latencies\"",
+                  "aggregation": {
+                    "alignmentPeriod": "60s",
+                    "perSeriesAligner": "ALIGN_PERCENTILE_95",
+                    "crossSeriesReducer": "REDUCE_MEAN"
+                  }
+                }
+              }
+            }],
+            "yAxis": {"label": "ms", "scale": "LINEAR"}
+          }
+        }
+      },
+      {
+        "xPos": 6, "yPos": 7, "width": 6, "height": 4,
+        "widget": {
+          "title": "Cloud Run backends: request latency p95 (MCP server, guideline agent, IdP)",
+          "xyChart": {
+            "dataSets": [{
+              "plotType": "LINE",
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"run.googleapis.com/request_latencies\" resource.type=\"cloud_run_revision\" (resource.label.service_name=\"${MCP_SERVICE}\" OR resource.label.service_name=\"${GUIDELINE_SERVICE}\" OR resource.label.service_name=\"${IDP_SERVICE}\")",
+                  "aggregation": {
+                    "alignmentPeriod": "60s",
+                    "perSeriesAligner": "ALIGN_PERCENTILE_95",
+                    "crossSeriesReducer": "REDUCE_MEAN",
+                    "groupByFields": ["resource.label.service_name"]
+                  }
+                }
+              }
+            }],
+            "yAxis": {"label": "ms", "scale": "LINEAR"}
+          }
+        }
+      },
+      {
+        "xPos": 0, "yPos": 11, "width": 6, "height": 4,
+        "widget": {
+          "title": "MCP server requests by response class (care-team denials are 200s with status access_denied; IAM-rejected direct calls are 4xx)",
+          "xyChart": {
+            "dataSets": [{
+              "plotType": "STACKED_BAR",
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"run.googleapis.com/request_count\" resource.type=\"cloud_run_revision\" resource.label.service_name=\"${MCP_SERVICE}\"",
+                  "aggregation": {
+                    "alignmentPeriod": "60s",
+                    "perSeriesAligner": "ALIGN_DELTA",
+                    "crossSeriesReducer": "REDUCE_SUM",
+                    "groupByFields": ["metric.label.response_code_class"]
+                  }
+                }
+              }
+            }],
+            "yAxis": {"label": "requests / min", "scale": "LINEAR"}
+          }
+        }
+      },
+      {
+        "xPos": 6, "yPos": 11, "width": 6, "height": 4,
+        "widget": {
+          "title": "Gateway 403s: who tried to reach what (live log panel)",
+          "logsPanel": {
+            "filter": "resource.type=\"networkservices.googleapis.com/Gateway\" resource.labels.gateway_name=\"${GATEWAY_NAME}\" httpRequest.status=403 -httpRequest.requestMethod=\"CONNECT\"",
+            "resourceNames": ["projects/${PROJECT_ID}"]
+          }
+        }
+      },
+      {
+        "xPos": 0, "yPos": 15, "width": 12, "height": 4,
+        "widget": {
+          "title": "On-behalf-of audit: clinicians authenticated by the MCP server (live log panel)",
+          "logsPanel": {
+            "filter": "resource.type=\"cloud_run_revision\" resource.labels.service_name=\"${MCP_SERVICE}\" textPayload:\"Authenticated clinician\"",
+            "resourceNames": ["projects/${PROJECT_ID}"]
+          }
+        }
+      }
+    ]
+  }
+}

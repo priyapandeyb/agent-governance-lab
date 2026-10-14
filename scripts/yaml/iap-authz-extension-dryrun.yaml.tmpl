@@ -1,0 +1,13 @@
+# IAP as a Service Extensions AUTHORIZATION extension on the Agent Gateway.
+# This is the "service extension" in this architecture: the gateway sends a
+# callout to IAP, IAP evaluates the calling agent's SPIFFE identity against
+# the IAM policy of the target Agent Registry resource (roles/iap.egressor),
+# and returns ALLOW or DENY.
+# DRY_RUN + failOpen: decisions are logged but nothing is blocked yet.
+name: ${GATEWAY_NAME}-authz-iap
+service: iap.googleapis.com
+failOpen: true
+timeout: 1s
+metadata:
+  iamEnforcementMode: "DRY_RUN"
+  iapPolicyVersion: "V1"

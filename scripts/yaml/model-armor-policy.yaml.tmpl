@@ -1,0 +1,13 @@
+# Required workshop control (Preview): binds the Model Armor extension to the gateway with a
+# CONTENT_AUTHZ profile (payload inspection over Envoy ext_proc). Max 4
+# custom authz policies per egress gateway.
+name: ${GATEWAY_NAME}-authz-policy-model-armor
+target:
+  resources:
+    - "projects/${PROJECT_ID}/locations/${REGION}/agentGateways/${GATEWAY_NAME}"
+policyProfile: CONTENT_AUTHZ
+action: CUSTOM
+customProvider:
+  authzExtension:
+    resources:
+      - "projects/${PROJECT_ID}/locations/${REGION}/authzExtensions/${GATEWAY_NAME}-authz-model-armor"

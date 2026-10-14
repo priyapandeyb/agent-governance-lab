@@ -1,0 +1,4 @@
+# Cloud Shell deployment clients and checks. No service runs in Cloud Shell.
+-r agents/requirements.txt
+-r mcp-server/requirements.txt
+pytest>=8.0

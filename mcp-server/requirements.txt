@@ -1,0 +1,4 @@
+fastmcp==2.12.4
+PyJWT[crypto]==2.10.1
+cryptography==44.0.2
+uvicorn==0.34.2

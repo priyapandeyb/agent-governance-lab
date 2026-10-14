@@ -1,0 +1,119 @@
+{
+  "tools": [
+    {
+      "name": "whoami",
+      "description": "Report which identities arrived on the request (authenticated clinician, IAP assertion presence). Diagnostic tool for verifying the on-behalf-of flow.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      },
+      "annotations": {
+        "title": "Who Am I",
+        "readOnlyHint": true,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "list_my_patients",
+      "description": "List the patients on the requesting clinician's panel.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      },
+      "annotations": {
+        "title": "List My Patients",
+        "readOnlyHint": true,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "get_patient_summary",
+      "description": "Get demographics, conditions, medications, and allergies for one patient. Care-team access only.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "description": "Patient identifier (P-xxxx) or MRN."
+          }
+        },
+        "required": [
+          "patient_id"
+        ]
+      },
+      "annotations": {
+        "title": "Get Patient Summary",
+        "readOnlyHint": true,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "get_recent_labs",
+      "description": "Get recent lab results with reference ranges and flags for one patient. Care-team access only.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "description": "Patient identifier (P-xxxx) or MRN."
+          }
+        },
+        "required": [
+          "patient_id"
+        ]
+      },
+      "annotations": {
+        "title": "Get Recent Labs",
+        "readOnlyHint": true,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "get_clinical_notes",
+      "description": "Get recent clinical notes and imported external documents for one patient. Care-team access only.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "description": "Patient identifier (P-xxxx) or MRN."
+          }
+        },
+        "required": [
+          "patient_id"
+        ]
+      },
+      "annotations": {
+        "title": "Get Clinical Notes",
+        "readOnlyHint": true,
+        "idempotentHint": true
+      }
+    },
+    {
+      "name": "add_progress_note",
+      "description": "Add a progress note to a patient's chart. Write operation.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "description": "Patient identifier (P-xxxx) or MRN."
+          },
+          "text": {
+            "type": "string",
+            "description": "The note text to append."
+          }
+        },
+        "required": [
+          "patient_id",
+          "text"
+        ]
+      },
+      "annotations": {
+        "title": "Add Progress Note",
+        "readOnlyHint": false,
+        "idempotentHint": false
+      }
+    }
+  ]
+}

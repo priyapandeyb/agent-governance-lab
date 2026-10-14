@@ -1,0 +1,14 @@
+# Network Security authorization policy binding the IAP extension to the
+# gateway. REQUEST_AUTHZ evaluates request metadata (headers, MCP method and
+# tool attributes); CONTENT_AUTHZ (see the Model Armor variant) additionally
+# inspects payloads.
+name: ${GATEWAY_NAME}-authz-policy-iap
+target:
+  resources:
+    - "projects/${PROJECT_ID}/locations/${REGION}/agentGateways/${GATEWAY_NAME}"
+policyProfile: REQUEST_AUTHZ
+action: CUSTOM
+customProvider:
+  authzExtension:
+    resources:
+      - "projects/${PROJECT_ID}/locations/${REGION}/authzExtensions/${GATEWAY_NAME}-authz-iap"

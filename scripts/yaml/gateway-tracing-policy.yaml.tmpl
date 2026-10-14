@@ -1,0 +1,19 @@
+# Agent Gateway distributed tracing (Preview). Attaches a Cloud Trace telemetry
+# policy to the egress gateway so every intercepted MCP/A2A request produces a
+# gateway span. parentBasedSampling honors the W3C traceparent the root agent
+# sends, so the gateway span nests under the agent's invocation span instead of
+# starting a disconnected trace.
+#
+# samplingRate 1.0 is for the workshop. Production guidance is 0.01 to 0.001
+# for baseline traffic, with parent-based sampling at 1.0 so any request the
+# agent chose to trace is traced end to end.
+name: "projects/${PROJECT_ID}/locations/${REGION}/telemetryPolicies/${GATEWAY_TRACING_POLICY}"
+displayName: "Tracing policy for ${GATEWAY_NAME}"
+targetTelemetry:
+  resources:
+    - "//networkservices.googleapis.com/projects/${PROJECT_ID}/locations/${REGION}/agentGateways/${GATEWAY_NAME}"
+tracingConfiguration:
+  samplingRate: 1.0
+  parentBasedSampling:
+    enabled: true
+    samplingRate: 1.0

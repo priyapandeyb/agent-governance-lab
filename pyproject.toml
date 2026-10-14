@@ -1,0 +1,38 @@
+[project]
+name = "agent-governance-lab"
+version = "1.0.0"
+description = "Cloud Shell environment for the Agent Governance Lab: deploy, call, and verify the governed healthcare agents."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+# Keep this list identical to the union of agents/requirements.txt,
+# mcp-server/requirements.txt, and pytest (what requirements-cloud.txt
+# installs). The requirements files stay authoritative for the Cloud Run
+# Dockerfiles; this file exists so `uv sync` works for the client environment.
+dependencies = [
+  "google-adk[a2a,agent-identity]==2.7.1",
+  "google-cloud-modelarmor>=0.2.0",
+  "google-cloud-aiplatform[adk,agent_engines]>=1.112.0",
+  "google-auth>=2.62.0",
+  "requests>=2.32.0",
+  "uvicorn==0.34.2",
+  "fastmcp==2.12.4",
+  "PyJWT[crypto]==2.10.1",
+  "cryptography==44.0.2",
+  "pytest>=8.0",
+]
+
+[dependency-groups]
+# Maintainer extras: the mock IdP runs in-process in the offline test suite,
+# and `markdown` builds the codelab HTML. `uv sync --group dev` installs them.
+dev = [
+  "fastapi>=0.133,<1",
+  "markdown==3.10.3",
+]
+
+[tool.uv]
+# This repository is an environment, not an installable package.
+package = false
+# `uv sync` installs exactly the learner set above (same as requirements-cloud.txt);
+# maintainers add the extras with `uv sync --group dev`.
+default-groups = []

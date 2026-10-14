@@ -1,0 +1,11 @@
+# Agent Gateway in Agent-to-Anywhere (egress) mode. There is no proxy URL:
+# agents bound to this gateway at deploy time have ALL outbound HTTP traffic
+# (MCP and A2A included) transparently intercepted and checked against the
+# registries listed here. Default deny for unregistered destinations.
+name: ${GATEWAY_NAME}
+protocols:
+  - MCP
+googleManaged:
+  governedAccessPath: AGENT_TO_ANYWHERE
+registries:
+  - "//agentregistry.googleapis.com/projects/${PROJECT_ID}/locations/${REGION}"

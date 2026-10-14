@@ -1,0 +1,11 @@
+# Required workshop control (Preview): Model Armor as a CONTENT_AUTHZ extension on the egress
+# gateway. Screens agent->tool requests and tool->agent responses at the
+# network layer, independent of agent code. Complements (does not replace)
+# the ADK plugin: the egress gateway never sees the clinician's raw prompt,
+# so direct-injection screening stays in the plugin (or an ingress gateway).
+name: ${GATEWAY_NAME}-authz-model-armor
+service: modelarmor.${REGION}.rep.googleapis.com
+metadata:
+  model_armor_settings: '[{"request_template_id": "projects/${PROJECT_ID}/locations/${REGION}/templates/${MODEL_ARMOR_REQUEST_TEMPLATE_ID}", "response_template_id": "projects/${PROJECT_ID}/locations/${REGION}/templates/${MODEL_ARMOR_RESPONSE_TEMPLATE_ID}"}]'
+failOpen: false
+timeout: 1s

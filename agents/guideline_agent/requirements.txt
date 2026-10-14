@@ -1,0 +1,12 @@
+google-adk[a2a]==2.7.1
+# The A2A server routes (JSON-RPC + SSE streaming) live behind a2a-sdk's
+# http-server extra; without it the app imports fine but fails at startup
+# with ModuleNotFoundError: sse_starlette, and Cloud Run reports that the
+# container never listened on $PORT.
+a2a-sdk[http-server]>=1.2.2,<2
+uvicorn==0.34.2
+# Observability (11-observability.sh): export spans to Cloud Trace and join the caller's
+# trace context on the A2A hop. Both are optional at runtime: a2a_main.py
+# degrades to no tracing if either import fails.
+opentelemetry-exporter-gcp-trace>=1.7.0
+opentelemetry-instrumentation-asgi>=0.48b0

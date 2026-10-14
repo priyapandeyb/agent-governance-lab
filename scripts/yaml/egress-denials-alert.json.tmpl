@@ -1,0 +1,28 @@
+{
+  "displayName": "${EGRESS_DENIAL_ALERT_DISPLAY_NAME}",
+  "combiner": "OR",
+  "enabled": true,
+  "conditions": [
+    {
+      "displayName": "Any egress denied by the ${GATEWAY_NAME} gateway in a 5-minute window",
+      "conditionThreshold": {
+        "filter": "metric.type=\"logging.googleapis.com/user/${EGRESS_DENIAL_METRIC}\"",
+        "aggregations": [
+          {
+            "alignmentPeriod": "300s",
+            "perSeriesAligner": "ALIGN_DELTA",
+            "crossSeriesReducer": "REDUCE_SUM"
+          }
+        ],
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 0,
+        "duration": "0s",
+        "trigger": {"count": 1}
+      }
+    }
+  ],
+  "documentation": {
+    "mimeType": "text/markdown",
+    "content": "An agent bound to `${GATEWAY_NAME}` attempted egress that IAP or the gateway denied: a write tool (`add_progress_note`), a tool with no `roles/iap.egressor` grant for that principal, or an unregistered destination.\n\nTriage:\n1. Gateway log: `resource.type=\"networkservices.googleapis.com/Gateway\" AND resource.labels.gateway_name=\"${GATEWAY_NAME}\" AND httpRequest.status=403` (read `httpRequest.requestUrl`, `jsonPayload.agentGatewayInfo.mcpInfo`).\n2. IAP decision: `protoPayload.serviceName=\"iap.googleapis.com\" AND protoPayload.authorizationInfo.permission=\"iap.resources.egressViaIAP\"` (read `authorizationInfo.granted`, `authenticationInfo.principalSubject`, `labels.\"iap.googleapis.com/audited_resource_name\"`).\n3. Expected during the 09-demo.sh write-tool beat; unexpected otherwise. A run of denials means a manipulated agent or a policy regression."
+  }
+}

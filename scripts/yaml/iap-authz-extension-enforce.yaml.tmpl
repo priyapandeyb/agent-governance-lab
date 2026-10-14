@@ -1,0 +1,10 @@
+# Enforced variant of the IAP authorization extension: DRY_RUN removed,
+# failOpen off. Re-importing under the same name upgrades the extension from
+# audit-only to blocking. Unauthorized egress now returns
+# 403 "Egress request is not authorized."
+name: ${GATEWAY_NAME}-authz-iap
+service: iap.googleapis.com
+failOpen: false
+timeout: 1s
+metadata:
+  iapPolicyVersion: "V1"

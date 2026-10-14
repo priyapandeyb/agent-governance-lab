@@ -1,0 +1,6 @@
+google-adk[a2a,agent-identity]==2.7.1
+google-cloud-modelarmor>=0.2.0
+google-cloud-aiplatform[adk,agent_engines]>=1.112.0
+google-auth>=2.62.0  # bind_id_token=False for Agent Identity ID tokens to *.run.app
+requests>=2.32.0
+uvicorn==0.34.2
