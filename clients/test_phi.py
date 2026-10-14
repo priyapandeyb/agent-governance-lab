@@ -1,7 +1,7 @@
 """Probe Model Armor directly with synthetic MRN-bearing versus minimal content.
 
 This tests the configured template, NOT gateway enforcement. Use the
-agent-mediated call (after 10-model-armor-gateway.sh) plus gateway/Model Armor logs to establish the latter.
+agent-mediated call (after 09-model-armor-gateway.sh) plus gateway/Model Armor logs to establish the latter.
 """
 import json
 import os
@@ -26,7 +26,7 @@ def main():
         print(json.dumps({"case": name, "verdict": result["filterMatchState"],
                           "filters": list(result.get("filterResults", {}))}))
         assert result["filterMatchState"] == expected, f"Unexpected verdict for {name}"
-    print("Template checks passed. Gateway enforcement still requires gateway-path evidence (10-model-armor-gateway.sh).")
+    print("Template checks passed. Gateway enforcement still requires gateway-path evidence (09-model-armor-gateway.sh).")
 
 
 if __name__ == "__main__":

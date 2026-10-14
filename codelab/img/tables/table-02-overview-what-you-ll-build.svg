@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="720" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Overview — What you&#x27;ll build</text>
+  <rect x="32" y="84" width="1216" height="604" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Component</text>
+  <text x="422" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Where it runs</text>
+  <text x="681" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Its job</text>
+  <rect x="33" y="134" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">Mock hospital IdP (hospital-idp)</text>
+  <text x="422" y="165" font-size="15" font-weight="400" fill="#2B3A48">Cloud Run</text>
+  <text x="681" y="165" font-size="15" font-weight="400" fill="#2B3A48">Mints clinician JWTs, publishes JWKS</text>
+  <rect x="33" y="184" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="184" x2="1248" y2="184" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="215" font-size="15" font-weight="600" fill="#123247">Patient Records MCP server</text>
+  <text x="48" y="237" font-size="15" font-weight="600" fill="#123247">(patient-records-mcp)</text>
+  <text x="422" y="215" font-size="15" font-weight="400" fill="#2B3A48">Cloud Run, IAM-private</text>
+  <text x="681" y="215" font-size="15" font-weight="400" fill="#2B3A48">Six tools; validates the clinician JWT; care-team row filter</text>
+  <rect x="33" y="256" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="256" x2="1248" y2="256" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="287" font-size="15" font-weight="600" fill="#123247">guideline_agent (A2A specialist)</text>
+  <text x="422" y="287" font-size="15" font-weight="400" fill="#2B3A48">Cloud Run</text>
+  <text x="681" y="287" font-size="15" font-weight="400" fill="#2B3A48">Publishes an A2A agent card; answers anonymized guideline</text>
+  <text x="681" y="309" font-size="15" font-weight="400" fill="#2B3A48">questions</text>
+  <rect x="33" y="328" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="328" x2="1248" y2="328" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="359" font-size="15" font-weight="600" fill="#123247">clinical_assistant (root agent)</text>
+  <text x="422" y="359" font-size="15" font-weight="400" fill="#2B3A48">Agent Runtime</text>
+  <text x="681" y="359" font-size="15" font-weight="400" fill="#2B3A48">Reasons, calls MCP tools on behalf of the clinician, delegates</text>
+  <text x="681" y="381" font-size="15" font-weight="400" fill="#2B3A48">to the specialist over A2A</text>
+  <rect x="33" y="400" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="400" x2="1248" y2="400" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="431" font-size="15" font-weight="600" fill="#123247">Agent Registry</text>
+  <text x="422" y="431" font-size="15" font-weight="400" fill="#2B3A48">Regional catalog</text>
+  <text x="681" y="431" font-size="15" font-weight="400" fill="#2B3A48">Three collections: agents, mcpServers, endpoints; the</text>
+  <text x="681" y="453" font-size="15" font-weight="400" fill="#2B3A48">gateway&#x27;s allowlist</text>
+  <rect x="33" y="472" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="472" x2="1248" y2="472" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="503" font-size="15" font-weight="600" fill="#123247">Agent Gateway + IAP REQUEST_AUTHZ</text>
+  <text x="48" y="525" font-size="15" font-weight="600" fill="#123247">extension</text>
+  <text x="422" y="503" font-size="15" font-weight="400" fill="#2B3A48">Google-managed</text>
+  <text x="681" y="503" font-size="15" font-weight="400" fill="#2B3A48">Default-deny egress; per-tool CEL policy on the agent&#x27;s</text>
+  <text x="681" y="525" font-size="15" font-weight="400" fill="#2B3A48">identity</text>
+  <rect x="33" y="544" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="544" x2="1248" y2="544" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="575" font-size="15" font-weight="600" fill="#123247">Model Armor template + CONTENT_AUTHZ</text>
+  <text x="48" y="597" font-size="15" font-weight="600" fill="#123247">extension</text>
+  <text x="422" y="575" font-size="15" font-weight="400" fill="#2B3A48">Regional</text>
+  <text x="681" y="575" font-size="15" font-weight="400" fill="#2B3A48">Prompt-injection and PHI screening in the agent and at the</text>
+  <text x="681" y="597" font-size="15" font-weight="400" fill="#2B3A48">gateway</text>
+  <rect x="33" y="616" width="1214" height="71" rx="9" fill="#F4F7FA"/>
+  <rect x="33" y="616" width="1214" height="10" fill="#F4F7FA"/>
+  <line x1="32" y1="616" x2="1248" y2="616" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="647" font-size="15" font-weight="600" fill="#123247">Cloud Trace, Logging, Monitoring</text>
+  <text x="422" y="647" font-size="15" font-weight="400" fill="#2B3A48">Project</text>
+  <text x="681" y="647" font-size="15" font-weight="400" fill="#2B3A48">Traces across the A2A hop, gateway dashboard, IAP audit rows,</text>
+  <text x="681" y="669" font-size="15" font-weight="400" fill="#2B3A48">alerts</text>
+  <line x1="406" y1="84" x2="406" y2="688" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="665" y1="84" x2="665" y2="688" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="604" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

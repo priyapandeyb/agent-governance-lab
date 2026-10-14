@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0E7C6B"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="760" fill="#FBFCFE"/>
+  <text x="34" y="42" font-size="22" font-weight="700" fill="#1A2430">Seven controls on one tool call</text>
+  <text x="34" y="66" font-size="13.5" fill="#5B6B7A">Identity, access checks, content screening, and audit. Cloud Run IAM adds the private ingress boundary.</text>
+
+  <!-- start -->
+  <rect x="360" y="88" width="280" height="40" rx="20" fill="#E7F4F0" stroke="#0E7C6B" stroke-width="1.5"/>
+  <text x="500" y="113" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0B5A4E">Clinician prompt &#8594; agent tool call</text>
+
+  <!-- gates -->
+  <!-- reusable row layout via explicit coords -->
+  <g>
+    <!-- 1 -->
+    <rect x="120" y="146" width="760" height="66" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.4"/>
+    <circle cx="152" cy="179" r="15" fill="#0E7C6B"/><text x="152" y="184" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">1</text>
+    <text x="184" y="174" font-size="14" font-weight="700" fill="#1A2430">Runtime attestation</text>
+    <text x="184" y="194" font-size="12" fill="#5B6B7A">Is this really the agent, on its trusted runtime?</text>
+    <text x="862" y="174" text-anchor="end" font-size="11.5" font-weight="700" fill="#0B5A4E">Agent Identity</text>
+    <text x="862" y="192" text-anchor="end" font-size="10.5" fill="#5B6B7A">cert-bound token, mTLS+DPoP</text>
+    <!-- 2 -->
+    <rect x="120" y="224" width="760" height="66" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.4"/>
+    <circle cx="152" cy="257" r="15" fill="#0E7C6B"/><text x="152" y="262" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">2</text>
+    <text x="184" y="252" font-size="14" font-weight="700" fill="#1A2430">Trusted discovery</text>
+    <text x="184" y="272" font-size="12" fill="#5B6B7A">Is the tool URL the administered one?</text>
+    <text x="862" y="252" text-anchor="end" font-size="11.5" font-weight="700" fill="#0B5A4E">Agent Registry</text>
+    <text x="862" y="270" text-anchor="end" font-size="10.5" fill="#5B6B7A">toolset resolved by name</text>
+    <!-- 3 -->
+    <rect x="120" y="302" width="760" height="66" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.4"/>
+    <circle cx="152" cy="335" r="15" fill="#0E7C6B"/><text x="152" y="340" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">3</text>
+    <text x="184" y="330" font-size="14" font-weight="700" fill="#1A2430">Egress gate</text>
+    <text x="184" y="350" font-size="12" fill="#5B6B7A">Is this destination registered at all?</text>
+    <text x="862" y="330" text-anchor="end" font-size="11.5" font-weight="700" fill="#0B5A4E">Agent Gateway</text>
+    <text x="862" y="348" text-anchor="end" font-size="10.5" fill="#5B6B7A">default deny</text>
+    <!-- 4 -->
+    <rect x="120" y="380" width="760" height="66" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.4"/>
+    <circle cx="152" cy="413" r="15" fill="#0E7C6B"/><text x="152" y="418" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">4</text>
+    <text x="184" y="408" font-size="14" font-weight="700" fill="#1A2430">Authorization</text>
+    <text x="184" y="428" font-size="12" fill="#5B6B7A">May THIS agent call THIS tool? Even if read-only?</text>
+    <text x="862" y="408" text-anchor="end" font-size="11.5" font-weight="700" fill="#9B2D20">IAP extension</text>
+    <text x="862" y="426" text-anchor="end" font-size="10.5" fill="#5B6B7A">iap.egressor + CEL</text>
+    <!-- 5 -->
+    <rect x="120" y="458" width="760" height="66" rx="10" fill="#FBF3DE" stroke="#E4C873" stroke-width="1.6"/>
+    <circle cx="152" cy="491" r="15" fill="#B8860B"/><text x="152" y="496" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">5</text>
+    <text x="184" y="486" font-size="14" font-weight="700" fill="#7A5B00">User context (on-behalf-of)</text>
+    <text x="184" y="506" font-size="12" fill="#7A5B00">Which human is this for, and what may THEY see?</text>
+    <text x="862" y="486" text-anchor="end" font-size="11.5" font-weight="700" fill="#7A5B00">MCP server</text>
+    <text x="862" y="504" text-anchor="end" font-size="10.5" fill="#7A5B00">clinician JWT + care team</text>
+    <!-- 6 -->
+    <rect x="120" y="536" width="760" height="66" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.4"/>
+    <circle cx="152" cy="569" r="15" fill="#0E7C6B"/><text x="152" y="574" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">6</text>
+    <text x="184" y="564" font-size="14" font-weight="700" fill="#1A2430">Content screening</text>
+    <text x="184" y="584" font-size="12" fill="#5B6B7A">Is the prompt or the returned data hostile?</text>
+    <text x="862" y="564" text-anchor="end" font-size="11.5" font-weight="700" fill="#0B5A4E">Model Armor</text>
+    <text x="862" y="582" text-anchor="end" font-size="10.5" fill="#5B6B7A">direct + indirect injection</text>
+    <!-- 7 -->
+    <rect x="120" y="614" width="760" height="66" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.4"/>
+    <circle cx="152" cy="647" r="15" fill="#0E7C6B"/><text x="152" y="652" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">7</text>
+    <text x="184" y="642" font-size="14" font-weight="700" fill="#1A2430">Audit</text>
+    <text x="184" y="662" font-size="12" fill="#5B6B7A">Can we reconstruct who did what for whom?</text>
+    <text x="862" y="642" text-anchor="end" font-size="11.5" font-weight="700" fill="#0B5A4E">Gateway + app logs</text>
+    <text x="862" y="660" text-anchor="end" font-size="10.5" fill="#5B6B7A">agent + tool + clinician</text>
+  </g>
+
+  <!-- connecting arrows down the left rail -->
+  <path d="M500 128 L500 146" stroke="#0E7C6B" stroke-width="1.6" marker-end="url(#d)"/>
+
+  <!-- outcome -->
+  <rect x="330" y="700" width="340" height="42" rx="21" fill="#1A2430"/>
+  <text x="500" y="726" text-anchor="middle" font-size="13.5" font-weight="700" fill="#FFFFFF">Patient data returned to the right clinician</text>
+</svg>

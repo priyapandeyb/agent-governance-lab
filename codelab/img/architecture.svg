@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 680" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#3B4A59"/>
+    </marker>
+    <marker id="arwA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#B8860B"/>
+    </marker>
+    <marker id="arwT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0E7C6B"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1180" height="680" fill="#FBFCFE"/>
+  <text x="34" y="42" font-size="22" font-weight="700" fill="#1A2430">Healthcare agents lab — system architecture</text>
+  <text x="34" y="66" font-size="13.5" fill="#5B6B7A">Authorization to reach a tool (agent identity, at the gateway) is separate from authorization to read data (clinician token, at the MCP server).</text>
+
+  <!-- Clinician -->
+  <rect x="34" y="110" width="176" height="86" rx="10" fill="#EEF3F7" stroke="#C9D4DE" stroke-width="1.5"/>
+  <text x="122" y="142" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1A2430">Clinician + client</text>
+  <text x="122" y="163" text-anchor="middle" font-size="12" fill="#5B6B7A">chat_remote.py / EHR UI</text>
+  <text x="122" y="181" text-anchor="middle" font-size="12" fill="#5B6B7A">signs in at hospital IdP</text>
+
+  <!-- Mock IdP -->
+  <rect x="34" y="520" width="176" height="104" rx="10" fill="#FBF3DE" stroke="#E4C873" stroke-width="1.5"/>
+  <text x="122" y="548" text-anchor="middle" font-size="14" font-weight="700" fill="#7A5B00">Hospital IdP (mock)</text>
+  <text x="122" y="568" text-anchor="middle" font-size="11.5" fill="#7A5B00">Cloud Run</text>
+  <text x="122" y="588" text-anchor="middle" font-size="11.5" fill="#5B6B7A">RS256 JWT + JWKS</text>
+  <text x="122" y="606" text-anchor="middle" font-size="11.5" fill="#5B6B7A">NOT a Google credential</text>
+
+  <!-- Agent Runtime -->
+  <rect x="266" y="96" width="250" height="150" rx="12" fill="#FFFFFF" stroke="#8FB0C9" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="282" y="118" font-size="11.5" font-weight="700" letter-spacing="0.4" fill="#5B6B7A">AGENT RUNTIME (Vertex AI)</text>
+  <rect x="284" y="130" width="214" height="100" rx="9" fill="#E7F4F0" stroke="#0E7C6B" stroke-width="1.5"/>
+  <text x="391" y="156" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0B5A4E">clinical_assistant</text>
+  <rect x="300" y="168" width="182" height="22" rx="11" fill="#FFFFFF" stroke="#0E7C6B" stroke-width="1"/>
+  <text x="391" y="183" text-anchor="middle" font-size="11" fill="#0B5A4E">Agent Identity — SPIFFE</text>
+  <rect x="300" y="196" width="182" height="22" rx="11" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1"/>
+  <text x="391" y="211" text-anchor="middle" font-size="11" fill="#5B6B7A">Model Armor plugin · header_provider</text>
+
+  <!-- Agent Gateway -->
+  <rect x="566" y="96" width="264" height="330" rx="12" fill="#F3F7FA" stroke="#3B4A59" stroke-width="2"/>
+  <text x="698" y="122" text-anchor="middle" font-size="15" font-weight="700" fill="#1A2430">Agent Gateway</text>
+  <text x="698" y="141" text-anchor="middle" font-size="11.5" fill="#5B6B7A">egress · default deny · intercepts all traffic</text>
+  <rect x="586" y="158" width="224" height="66" rx="9" fill="#FCEBE7" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="698" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="#9B2D20">IAP authz extension</text>
+  <text x="698" y="200" text-anchor="middle" font-size="11" fill="#9B2D20">service extension · REQUEST_AUTHZ</text>
+  <text x="698" y="216" text-anchor="middle" font-size="11" fill="#9B2D20">roles/iap.egressor + CEL (per tool)</text>
+  <rect x="586" y="234" width="224" height="52" rx="9" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.3"/>
+  <text x="698" y="256" text-anchor="middle" font-size="12.5" font-weight="700" fill="#5B6B7A">Model Armor extension</text>
+  <text x="698" y="273" text-anchor="middle" font-size="11" fill="#5B6B7A">CONTENT_AUTHZ · required</text>
+  <text x="698" y="312" text-anchor="middle" font-size="11.5" fill="#3B4A59">TLS terminated + re-originated;</text>
+  <text x="698" y="329" text-anchor="middle" font-size="11.5" fill="#3B4A59">MCP-aware (per-tool attributes).</text>
+  <text x="698" y="352" text-anchor="middle" font-size="11.5" fill="#3B4A59">Extension attaches to the GATEWAY,</text>
+  <text x="698" y="369" text-anchor="middle" font-size="11.5" fill="#3B4A59">not to Cloud Run.</text>
+  <text x="698" y="399" text-anchor="middle" font-size="11" fill="#5B6B7A">deny &#8594; HTTP 403 "Egress request is not authorized."</text>
+
+  <!-- Agent Registry -->
+  <rect x="566" y="520" width="264" height="120" rx="10" fill="#EEF3F7" stroke="#0E7C6B" stroke-width="1.5"/>
+  <text x="698" y="546" text-anchor="middle" font-size="14" font-weight="700" fill="#0B5A4E">Agent Registry</text>
+  <text x="698" y="568" text-anchor="middle" font-size="11.5" fill="#3B4A59">patient-records-mcp (+ toolspec)</text>
+  <text x="698" y="586" text-anchor="middle" font-size="11.5" fill="#3B4A59">guideline-agent (A2A) · 17 platform endpoints</text>
+  <text x="698" y="612" text-anchor="middle" font-size="11" fill="#5B6B7A">discovery catalog + gateway allowlist</text>
+  <text x="698" y="629" text-anchor="middle" font-size="11" fill="#5B6B7A">policy attachment point (IAM)</text>
+
+  <!-- Cloud Run backends -->
+  <rect x="886" y="110" width="262" height="120" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <text x="1017" y="136" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1A2430">Patient Records MCP</text>
+  <text x="1017" y="157" text-anchor="middle" font-size="11.5" fill="#5B6B7A">Cloud Run · FastMCP · --min-instances=1</text>
+  <text x="1017" y="180" text-anchor="middle" font-size="11.5" fill="#3B4A59">validates clinician JWT (JWKS)</text>
+  <text x="1017" y="198" text-anchor="middle" font-size="11.5" fill="#3B4A59">care-team row filter (on-behalf-of)</text>
+  <text x="1017" y="217" text-anchor="middle" font-size="11" fill="#5B6B7A">6 tools · 5 read + 1 write</text>
+
+  <rect x="886" y="256" width="262" height="92" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <text x="1017" y="282" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1A2430">guideline_agent</text>
+  <text x="1017" y="303" text-anchor="middle" font-size="11.5" fill="#5B6B7A">Cloud Run · A2A server (card URL no :443)</text>
+  <text x="1017" y="325" text-anchor="middle" font-size="11.5" fill="#6B4FBB">synthetic only · history may be sent</text>
+
+  <!-- flows -->
+  <!-- 1 clinician -> idp (get token) -->
+  <path d="M110 196 L110 520" fill="none" stroke="#B8860B" stroke-width="1.8" marker-end="url(#arwA)"/>
+  <circle cx="110" cy="360" r="12" fill="#B8860B"/><text x="110" y="364" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">1</text>
+  <text x="120" y="352" font-size="11" fill="#7A5B00">get token</text>
+  <text x="120" y="368" font-size="11" fill="#7A5B00">JWT back</text>
+
+  <!-- 2 clinician -> agent (prompt + JWT in session) -->
+  <path d="M210 150 L284 150" fill="none" stroke="#B8860B" stroke-width="1.8" marker-end="url(#arwA)"/>
+  <circle cx="238" cy="128" r="12" fill="#B8860B"/><text x="238" y="132" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">2</text>
+  <text x="238" y="98" text-anchor="middle" font-size="10.5" fill="#7A5B00">prompt + JWT</text>
+  <text x="238" y="111" text-anchor="middle" font-size="10.5" fill="#7A5B00">in session</text>
+
+  <!-- 3 agent -> gateway (MCP/A2A call, JWT in headers) -->
+  <path d="M516 172 L566 172" fill="none" stroke="#3B4A59" stroke-width="1.8" marker-end="url(#arw)"/>
+  <circle cx="541" cy="150" r="12" fill="#0E7C6B"/><text x="541" y="154" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">3</text>
+  <text x="541" y="120" text-anchor="middle" font-size="10.5" fill="#3B4A59">MCP/A2A</text>
+  <text x="541" y="133" text-anchor="middle" font-size="10.5" fill="#3B4A59">+ JWT header</text>
+
+  <!-- IAP -> registry (policy lookup) -->
+  <path d="M698 426 L698 520" fill="none" stroke="#C0392B" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arw)"/>
+  <text x="708" y="476" font-size="10.5" fill="#9B2D20">policy lookup (agent identity + CEL)</text>
+
+  <!-- 4 gateway -> MCP (allowed) -->
+  <path d="M830 170 L886 170" fill="none" stroke="#0E7C6B" stroke-width="1.8" marker-end="url(#arwT)"/>
+  <circle cx="858" cy="148" r="12" fill="#0E7C6B"/><text x="858" y="152" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">4</text>
+  <text x="858" y="132" text-anchor="middle" font-size="10.5" fill="#0B5A4E">allowed</text>
+
+  <!-- gateway -> guideline (allowed A2A) -->
+  <path d="M830 300 L886 300" fill="none" stroke="#6B4FBB" stroke-width="1.8" marker-end="url(#arw)"/>
+  <text x="858" y="292" text-anchor="middle" font-size="10.5" fill="#6B4FBB">A2A</text>
+
+  <!-- 5 MCP -> idp (JWKS fetch) -->
+  <path d="M886 214 C560 300 360 430 210 560" fill="none" stroke="#B8860B" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arwA)"/>
+  <circle cx="330" cy="486" r="12" fill="#B8860B"/><text x="330" y="490" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">5</text>
+  <text x="348" y="490" font-size="10.5" fill="#7A5B00">JWKS fetch (cached) to validate the clinician JWT</text>
+
+  <!-- legend -->
+  <g transform="translate(34,646)" font-size="11.5">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#B8860B" stroke-width="2.4"/><text x="36" y="4" fill="#5B6B7A">clinician token (hospital IdP)</text>
+    <line x1="240" y1="0" x2="270" y2="0" stroke="#3B4A59" stroke-width="2.4" marker-end="url(#arw)"/><text x="276" y="4" fill="#5B6B7A">agent call</text>
+    <line x1="380" y1="0" x2="410" y2="0" stroke="#0E7C6B" stroke-width="2.4" marker-end="url(#arwT)"/><text x="416" y="4" fill="#5B6B7A">allowed egress</text>
+    <line x1="540" y1="0" x2="570" y2="0" stroke="#C0392B" stroke-width="2.4" stroke-dasharray="6 4"/><text x="576" y="4" fill="#5B6B7A">policy lookup / deny path</text>
+    <line x1="760" y1="0" x2="790" y2="0" stroke="#6B4FBB" stroke-width="2.4"/><text x="796" y="4" fill="#5B6B7A">A2A hop</text>
+  </g>
+</svg>

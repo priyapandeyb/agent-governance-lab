@@ -37,7 +37,7 @@ export GATEWAY_NAME="healthcare-agents-gateway"
 export MODEL_ARMOR_TEMPLATE_ID="healthcare-agents-armor"
 export MODEL_ARMOR_PHI_TEMPLATE_ID="healthcare-agents-phi"
 export SDP_INSPECT_TEMPLATE_ID="healthcare-agents-phi-inspect"
-# Both directions default to injection screening; 10-model-armor-gateway.sh's PHI exercise switches response
+# Both directions default to injection screening; 09-model-armor-gateway.sh's PHI exercise switches response
 # screening to the strict MRN-blocking profile for a separate PHI exercise.
 export MODEL_ARMOR_REQUEST_TEMPLATE_ID="${MODEL_ARMOR_REQUEST_TEMPLATE_ID:-$MODEL_ARMOR_TEMPLATE_ID}"
 export MODEL_ARMOR_RESPONSE_TEMPLATE_ID="${MODEL_ARMOR_RESPONSE_TEMPLATE_ID:-$MODEL_ARMOR_TEMPLATE_ID}"

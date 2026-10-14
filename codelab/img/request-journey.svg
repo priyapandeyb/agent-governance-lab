@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 840" role="img" aria-labelledby="title desc">
+<title id="title">One request. Independent authorization decisions.</title><desc id="desc">Follow the same request from clinician sign-in through the governed tool call. Step 03 is required: Cloud Run validates the agent's own ID token before MCP executes.</desc>
+<rect width="1120" height="840" rx="18" fill="#f8fafb"/>
+<g font-family="Arial, sans-serif">
+<text x="42" y="54" font-size="27" font-weight="700" fill="#123247">One request. Independent authorization decisions.</text>
+<text x="42" y="86" font-size="16" fill="#4b6472">Follow the same request from clinician sign-in through the governed tool call.</text>
+<rect x="40" y="120" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="120" width="184" height="82" rx="10" fill="#fff1d7"/>
+<text x="60" y="166" font-size="17" font-weight="700" fill="#805600">01 · CLINICIAN</text>
+<text x="250" y="151" font-size="19" font-weight="700" fill="#123247">Hospital access token → session state</text>
+<text x="250" y="179" font-size="16" fill="#4b6472">JWT: signature + issuer + audience + required expiry. Never put it in the prompt.</text>
+<rect x="40" y="220" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="220" width="184" height="82" rx="10" fill="#e3f2ef"/>
+<text x="60" y="266" font-size="17" font-weight="700" fill="#116858">02 · AGENT</text>
+<text x="250" y="251" font-size="19" font-weight="700" fill="#123247">Agent Identity → gateway IAP service extension</text>
+<text x="250" y="279" font-size="16" fill="#4b6472">The agent principal may invoke only the named read tools. No write permission.</text>
+<rect x="40" y="320" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="320" width="184" height="82" rx="10" fill="#e6edf6"/>
+<text x="60" y="366" font-size="17" font-weight="700" fill="#294d77">03 · CLOUD RUN</text>
+<text x="250" y="351" font-size="19" font-weight="700" fill="#123247">Ingress authentication is a separate decision</text>
+<text x="250" y="379" font-size="16" fill="#4b6472">Private Cloud Run invocation needs the agent's own Google ID token and its run.invoker grant.</text>
+<rect x="40" y="420" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="420" width="184" height="82" rx="10" fill="#fff1d7"/>
+<text x="60" y="466" font-size="17" font-weight="700" fill="#805600">04 · RECORDS</text>
+<text x="250" y="451" font-size="19" font-weight="700" fill="#123247">Hospital access token → care-team authorization</text>
+<text x="250" y="479" font-size="16" fill="#4b6472">X-Clinician-Token determines which patient rows the signed-in clinician can read.</text>
+<rect x="40" y="520" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="520" width="184" height="82" rx="10" fill="#fee8e4"/>
+<text x="60" y="566" font-size="17" font-weight="700" fill="#a23525">05 · CONTENT</text>
+<text x="250" y="551" font-size="19" font-weight="700" fill="#123247">Response → Model Armor service extension</text>
+<text x="250" y="579" font-size="16" fill="#4b6472">Inspect supported tool payloads for embedded instructions and selected identifiers.</text>
+<rect x="40" y="620" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="620" width="184" height="82" rx="10" fill="#e3f2ef"/>
+<text x="60" y="666" font-size="17" font-weight="700" fill="#116858">06 · ANSWER</text>
+<text x="250" y="651" font-size="19" font-weight="700" fill="#123247">Allowed content → assistant → clinician</text>
+<text x="250" y="679" font-size="16" fill="#4b6472">Use gateway and Model Armor evidence to establish what actually passed.</text>
+<text x="42" y="800" font-size="15" fill="#4b6472">Step 03 is required: Cloud Run validates the agent's own ID token before MCP executes.</text>
+</g></svg>

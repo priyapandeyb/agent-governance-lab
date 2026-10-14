@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 310" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="310" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 8: Deploy the agents: Agent Identity, the agent card, and the registry — The product scenario: Agent Runtime and Agent Identity</text>
+  <rect x="32" y="84" width="1216" height="194" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Agent</text>
+  <text x="257" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Surface</text>
+  <text x="466" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Enters Agent Registry</text>
+  <text x="778" y="115" font-size="15" font-weight="700" fill="#FFFFFF">What this task establishes</text>
+  <rect x="33" y="134" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">guideline-agent</text>
+  <text x="257" y="165" font-size="15" font-weight="400" fill="#2B3A48">Cloud Run</text>
+  <text x="466" y="165" font-size="15" font-weight="400" fill="#2B3A48">Manually, from its live agent</text>
+  <text x="466" y="187" font-size="15" font-weight="400" fill="#2B3A48">card, into agents</text>
+  <text x="778" y="165" font-size="15" font-weight="400" fill="#2B3A48">A reachable, card-advertised specialist, and an</text>
+  <text x="778" y="187" font-size="15" font-weight="400" fill="#2B3A48">entry to bind an agent-to-agent policy to</text>
+  <rect x="33" y="206" width="1214" height="71" rx="9" fill="#F4F7FA"/>
+  <rect x="33" y="206" width="1214" height="10" fill="#F4F7FA"/>
+  <line x1="32" y1="206" x2="1248" y2="206" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="237" font-size="15" font-weight="600" fill="#123247">clinical-assistant</text>
+  <text x="257" y="237" font-size="15" font-weight="400" fill="#2B3A48">Agent Runtime</text>
+  <text x="466" y="237" font-size="15" font-weight="400" fill="#2B3A48">Automatically, by Agent</text>
+  <text x="466" y="259" font-size="15" font-weight="400" fill="#2B3A48">Runtime, into agents</text>
+  <text x="778" y="237" font-size="15" font-weight="400" fill="#2B3A48">Its SPIFFE identity, its gateway binding, and</text>
+  <text x="778" y="259" font-size="15" font-weight="400" fill="#2B3A48">OpenTelemetry export with content off</text>
+  <line x1="241" y1="84" x2="241" y2="278" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="450" y1="84" x2="450" y2="278" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="762" y1="84" x2="762" y2="278" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="194" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

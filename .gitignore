@@ -30,9 +30,7 @@ art/
 # Maintainer-only notes (review record, publishing procedure): never pushed
 maintainer/
 
-# The learner-facing codelab (codelab.md, deep-dive.md, build.py, img/) is
-# distributed separately from the code repository that Cloud Shell clones.
-# Keep it next to the code locally, but never push it. Because this folder is
-# ignored, `git clean -x` WOULD DELETE IT; use `git clean` without -x.
-codelab/
+# Generated HTML previews (we publish the codelab as Markdown on GitHub)
+codelab/*.html
+
 

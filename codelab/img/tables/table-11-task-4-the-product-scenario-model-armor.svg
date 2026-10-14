@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 714" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="714" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 4: Model Armor, standalone, and the ADK safety plugin — The product scenario: Model Armor</text>
+  <rect x="32" y="84" width="1216" height="598" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Element</text>
+  <text x="284" y="115" font-size="15" font-weight="700" fill="#FFFFFF">What it is</text>
+  <text x="719" y="115" font-size="15" font-weight="700" fill="#FFFFFF">In this lab</text>
+  <rect x="33" y="134" width="1214" height="94" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">Template</text>
+  <text x="284" y="165" font-size="15" font-weight="400" fill="#2B3A48">A named, regional filter configuration</text>
+  <text x="719" y="165" font-size="15" font-weight="400" fill="#2B3A48">healthcare-agents-armor for injection screening;</text>
+  <text x="719" y="187" font-size="15" font-weight="400" fill="#2B3A48">healthcare-agents-phi, the same plus a Sensitive Data</text>
+  <text x="719" y="209" font-size="15" font-weight="400" fill="#2B3A48">Protection detector for a synthetic record number</text>
+  <rect x="33" y="228" width="1214" height="94" fill="#F4F7FA"/>
+  <line x1="32" y1="228" x2="1248" y2="228" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="259" font-size="15" font-weight="600" fill="#123247">Prompt injection and</text>
+  <text x="48" y="281" font-size="15" font-weight="600" fill="#123247">jailbreak filter</text>
+  <text x="284" y="259" font-size="15" font-weight="400" fill="#2B3A48">Detects instruction-override and jailbreak</text>
+  <text x="284" y="281" font-size="15" font-weight="400" fill="#2B3A48">attempts; thresholds LOW_AND_ABOVE,</text>
+  <text x="284" y="303" font-size="15" font-weight="400" fill="#2B3A48">MEDIUM_AND_ABOVE, HIGH</text>
+  <text x="719" y="259" font-size="15" font-weight="400" fill="#2B3A48">ENABLED at MEDIUM_AND_ABOVE</text>
+  <rect x="33" y="322" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="322" x2="1248" y2="322" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="353" font-size="15" font-weight="600" fill="#123247">Malicious URI filter</text>
+  <text x="284" y="353" font-size="15" font-weight="400" fill="#2B3A48">Flags known-bad links</text>
+  <text x="719" y="353" font-size="15" font-weight="400" fill="#2B3A48">ENABLED</text>
+  <rect x="33" y="372" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="372" x2="1248" y2="372" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="403" font-size="15" font-weight="600" fill="#123247">Sensitive Data</text>
+  <text x="48" y="425" font-size="15" font-weight="600" fill="#123247">Protection (SDP)</text>
+  <text x="284" y="403" font-size="15" font-weight="400" fill="#2B3A48">Basic (built-in infoTypes) or advanced (your</text>
+  <text x="284" y="425" font-size="15" font-weight="400" fill="#2B3A48">own inspect template)</text>
+  <text x="719" y="403" font-size="15" font-weight="400" fill="#2B3A48">Advanced: a custom infoType HOSPITAL_MRN, regex</text>
+  <text x="719" y="425" font-size="15" font-weight="400" fill="#2B3A48">\bMRN-[0-9]{6}\b, used only by the PHI template</text>
+  <rect x="33" y="444" width="1214" height="94" fill="#FFFFFF"/>
+  <line x1="32" y1="444" x2="1248" y2="444" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="475" font-size="15" font-weight="600" fill="#123247">Responsible AI filters</text>
+  <text x="284" y="475" font-size="15" font-weight="400" fill="#2B3A48">Dangerous content, hate speech, harassment,</text>
+  <text x="284" y="497" font-size="15" font-weight="400" fill="#2B3A48">sexually explicit, each with a confidence</text>
+  <text x="284" y="519" font-size="15" font-weight="400" fill="#2B3A48">level</text>
+  <text x="719" y="475" font-size="15" font-weight="400" fill="#2B3A48">Not enabled here; the threat model is injection and PHI,</text>
+  <text x="719" y="497" font-size="15" font-weight="400" fill="#2B3A48">not toxicity</text>
+  <rect x="33" y="538" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="538" x2="1248" y2="538" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="569" font-size="15" font-weight="600" fill="#123247">sanitizeUserPrompt /</text>
+  <text x="48" y="591" font-size="15" font-weight="600" fill="#123247">sanitizeModelResponse</text>
+  <text x="284" y="569" font-size="15" font-weight="400" fill="#2B3A48">The two APIs; input text goes to the first,</text>
+  <text x="284" y="591" font-size="15" font-weight="400" fill="#2B3A48">model output to the second</text>
+  <text x="719" y="569" font-size="15" font-weight="400" fill="#2B3A48">Both are called by the plugin; the gateway extension calls</text>
+  <text x="719" y="591" font-size="15" font-weight="400" fill="#2B3A48">them for tool traffic</text>
+  <rect x="33" y="610" width="1214" height="71" rx="9" fill="#FFFFFF"/>
+  <rect x="33" y="610" width="1214" height="10" fill="#FFFFFF"/>
+  <line x1="32" y1="610" x2="1248" y2="610" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="641" font-size="15" font-weight="600" fill="#123247">sanitizationResult.filt</text>
+  <text x="48" y="663" font-size="15" font-weight="600" fill="#123247">erMatchState</text>
+  <text x="284" y="641" font-size="15" font-weight="400" fill="#2B3A48">MATCH_FOUND or NO_MATCH_FOUND, with</text>
+  <text x="284" y="663" font-size="15" font-weight="400" fill="#2B3A48">per-filter detail</text>
+  <text x="719" y="641" font-size="15" font-weight="400" fill="#2B3A48">The verdict you capture as evidence</text>
+  <line x1="268" y1="84" x2="268" y2="682" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="703" y1="84" x2="703" y2="682" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="598" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

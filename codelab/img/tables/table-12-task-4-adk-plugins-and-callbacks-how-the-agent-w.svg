@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 338" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="338" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 4: Model Armor, standalone, and the ADK safety plugin — ADK plugins and callbacks: how the agent will enforce the verdicts</text>
+  <rect x="32" y="84" width="1216" height="222" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Threat</text>
+  <text x="304" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Where the attack text comes from</text>
+  <text x="619" y="115" font-size="15" font-weight="700" fill="#FFFFFF">ADK callback</text>
+  <text x="875" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Model Armor API</text>
+  <rect x="33" y="134" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">Direct injection</text>
+  <text x="304" y="165" font-size="15" font-weight="400" fill="#2B3A48">The clinician&#x27;s own prompt</text>
+  <text x="619" y="165" font-size="15" font-weight="400" fill="#2B3A48">on_user_message_callback</text>
+  <text x="875" y="165" font-size="15" font-weight="400" fill="#2B3A48">sanitizeUserPrompt</text>
+  <rect x="33" y="184" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="184" x2="1248" y2="184" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="215" font-size="15" font-weight="600" fill="#123247">Indirect injection</text>
+  <text x="304" y="215" font-size="15" font-weight="400" fill="#2B3A48">A tool result or retrieved</text>
+  <text x="304" y="237" font-size="15" font-weight="400" fill="#2B3A48">document</text>
+  <text x="619" y="215" font-size="15" font-weight="400" fill="#2B3A48">after_tool_callback</text>
+  <text x="875" y="215" font-size="15" font-weight="400" fill="#2B3A48">sanitizeUserPrompt (same API, applied to</text>
+  <text x="875" y="237" font-size="15" font-weight="400" fill="#2B3A48">the tool result)</text>
+  <rect x="33" y="256" width="1214" height="49" rx="9" fill="#FFFFFF"/>
+  <rect x="33" y="256" width="1214" height="10" fill="#FFFFFF"/>
+  <line x1="32" y1="256" x2="1248" y2="256" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="287" font-size="15" font-weight="600" fill="#123247">Unsafe or leaking output</text>
+  <text x="304" y="287" font-size="15" font-weight="400" fill="#2B3A48">The model&#x27;s own generation</text>
+  <text x="619" y="287" font-size="15" font-weight="400" fill="#2B3A48">after_model_callback</text>
+  <text x="875" y="287" font-size="15" font-weight="400" fill="#2B3A48">sanitizeModelResponse</text>
+  <line x1="288" y1="84" x2="288" y2="306" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="603" y1="84" x2="603" y2="306" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="859" y1="84" x2="859" y2="306" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="222" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

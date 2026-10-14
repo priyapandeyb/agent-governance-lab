@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="360" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 6: Agent Registry: register the MCP server and the platform endpoints — The product scenario: Agent Registry</text>
+  <rect x="32" y="84" width="1216" height="244" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Job</text>
+  <text x="310" y="115" font-size="15" font-weight="700" fill="#FFFFFF">What it means in the hospital story</text>
+  <rect x="33" y="134" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">Discovery catalog</text>
+  <text x="310" y="165" font-size="15" font-weight="400" fill="#2B3A48">The deployed assistant resolves its toolset by registry name (registry.get_mcp_toolset(...)), never by a</text>
+  <text x="310" y="187" font-size="15" font-weight="400" fill="#2B3A48">hard-coded URL; other developers find the specialist&#x27;s skills in the Agents tab</text>
+  <rect x="33" y="206" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="206" x2="1248" y2="206" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="237" font-size="15" font-weight="600" fill="#123247">Gateway allowlist</text>
+  <text x="310" y="237" font-size="15" font-weight="400" fill="#2B3A48">The gateway consults the registry for every outbound call; a destination that is not an entry is a 403,</text>
+  <text x="310" y="259" font-size="15" font-weight="400" fill="#2B3A48">full stop</text>
+  <rect x="33" y="278" width="1214" height="49" rx="9" fill="#FFFFFF"/>
+  <rect x="33" y="278" width="1214" height="10" fill="#FFFFFF"/>
+  <line x1="32" y1="278" x2="1248" y2="278" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="309" font-size="15" font-weight="600" fill="#123247">Policy attachment point</text>
+  <text x="310" y="309" font-size="15" font-weight="400" fill="#2B3A48">roles/iap.egressor grants bind to entries; the collection decides the policy flag</text>
+  <line x1="294" y1="84" x2="294" y2="328" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="244" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 388" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="388" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 9: Grant egress, then enforce — The product scenario: IAM agent policies</text>
+  <rect x="32" y="84" width="1216" height="272" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Policy shape</text>
+  <text x="345" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Flag</text>
+  <text x="642" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Used here</text>
+  <text x="939" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Condition</text>
+  <rect x="33" y="134" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">Agent-to-registry</text>
+  <text x="345" y="165" font-size="15" font-weight="400" fill="#2B3A48">whole catalog</text>
+  <text x="642" y="165" font-size="15" font-weight="400" fill="#2B3A48">No: too broad for PHI</text>
+  <text x="939" y="165" font-size="15" font-weight="400" fill="#2B3A48">—</text>
+  <rect x="33" y="184" width="1214" height="50" fill="#F4F7FA"/>
+  <line x1="32" y1="184" x2="1248" y2="184" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="215" font-size="15" font-weight="600" fill="#123247">Agent-to-MCP server</text>
+  <text x="345" y="215" font-size="15" font-weight="400" fill="#2B3A48">--mcp-server=ID</text>
+  <text x="642" y="215" font-size="15" font-weight="400" fill="#2B3A48">patient-records-mcp</text>
+  <text x="939" y="215" font-size="15" font-weight="400" fill="#2B3A48">CEL on tool attributes</text>
+  <rect x="33" y="234" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="234" x2="1248" y2="234" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="265" font-size="15" font-weight="600" fill="#123247">Agent-to-agent</text>
+  <text x="345" y="265" font-size="15" font-weight="400" fill="#2B3A48">--agent=ID</text>
+  <text x="642" y="265" font-size="15" font-weight="400" fill="#2B3A48">guideline-agent</text>
+  <text x="939" y="265" font-size="15" font-weight="400" fill="#2B3A48">None (A2A is governed per</text>
+  <text x="939" y="287" font-size="15" font-weight="400" fill="#2B3A48">destination)</text>
+  <rect x="33" y="306" width="1214" height="49" rx="9" fill="#F4F7FA"/>
+  <rect x="33" y="306" width="1214" height="10" fill="#F4F7FA"/>
+  <line x1="32" y1="306" x2="1248" y2="306" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="337" font-size="15" font-weight="600" fill="#123247">Agent-to-endpoint</text>
+  <text x="345" y="337" font-size="15" font-weight="400" fill="#2B3A48">--endpoint=ID</text>
+  <text x="642" y="337" font-size="15" font-weight="400" fill="#2B3A48">Each platform hostname</text>
+  <text x="939" y="337" font-size="15" font-weight="400" fill="#2B3A48">None</text>
+  <line x1="329" y1="84" x2="329" y2="356" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="626" y1="84" x2="626" y2="356" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="923" y1="84" x2="923" y2="356" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="272" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

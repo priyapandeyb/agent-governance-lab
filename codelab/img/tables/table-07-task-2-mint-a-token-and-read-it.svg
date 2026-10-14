@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 366" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="366" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 2: The hospital identity: deploy the mock IdP — Mint a token and read it</text>
+  <rect x="32" y="84" width="1216" height="250" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Claim</text>
+  <text x="463" y="115" font-size="15" font-weight="700" fill="#FFFFFF">What consumes it</text>
+  <rect x="33" y="134" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">iss</text>
+  <text x="463" y="165" font-size="15" font-weight="400" fill="#2B3A48">The MCP server checks it equals the configured issuer and fetches JWKS from it</text>
+  <rect x="33" y="184" width="1214" height="50" fill="#F4F7FA"/>
+  <line x1="32" y1="184" x2="1248" y2="184" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="215" font-size="15" font-weight="600" fill="#123247">aud = patient-records-mcp</text>
+  <text x="463" y="215" font-size="15" font-weight="400" fill="#2B3A48">Tokens minted for any other service are rejected</text>
+  <rect x="33" y="234" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="234" x2="1248" y2="234" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="265" font-size="15" font-weight="600" fill="#123247">email</text>
+  <text x="463" y="265" font-size="15" font-weight="400" fill="#2B3A48">Drives the per-patient care-team check</text>
+  <rect x="33" y="284" width="1214" height="49" rx="9" fill="#F4F7FA"/>
+  <rect x="33" y="284" width="1214" height="10" fill="#F4F7FA"/>
+  <line x1="32" y1="284" x2="1248" y2="284" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="315" font-size="15" font-weight="600" fill="#123247">exp = iat + 3600</text>
+  <text x="463" y="315" font-size="15" font-weight="400" fill="#2B3A48">Rejected after one hour</text>
+  <line x1="447" y1="84" x2="447" y2="334" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="250" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

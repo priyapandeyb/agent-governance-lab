@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 376" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="376" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 8: Deploy the agents: Agent Identity, the agent card, and the registry — The product scenario: Agent Runtime and Agent Identity</text>
+  <rect x="32" y="84" width="1216" height="260" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="72" rx="10" fill="#1A2430"/>
+  <rect x="32" y="146" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Part of the</text>
+  <text x="48" y="137" font-size="15" font-weight="700" fill="#FFFFFF">principal</text>
+  <text x="226" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Example</text>
+  <text x="729" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Why it matters</text>
+  <rect x="33" y="156" width="1214" height="116" fill="#FFFFFF"/>
+  <line x1="32" y1="156" x2="1248" y2="156" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="187" font-size="15" font-weight="600" fill="#123247">Trust domain</text>
+  <text x="226" y="187" font-size="15" font-weight="400" fill="#2B3A48">agents.global.proj-123456789012.system.id.goog (no</text>
+  <text x="226" y="209" font-size="15" font-weight="400" fill="#2B3A48">organization) or</text>
+  <text x="226" y="231" font-size="15" font-weight="400" fill="#2B3A48">agents.global.org-987654321098.system.id.goog</text>
+  <text x="226" y="253" font-size="15" font-weight="400" fill="#2B3A48">(organization)</text>
+  <text x="729" y="187" font-size="15" font-weight="400" fill="#2B3A48">Whoever issued the badge: your organization if the</text>
+  <text x="729" y="209" font-size="15" font-weight="400" fill="#2B3A48">project has one, otherwise the project itself. 00-env.sh</text>
+  <text x="729" y="231" font-size="15" font-weight="400" fill="#2B3A48">printed yours as AGENT_TRUST_DOMAIN</text>
+  <rect x="33" y="272" width="1214" height="71" rx="9" fill="#F4F7FA"/>
+  <rect x="33" y="272" width="1214" height="10" fill="#F4F7FA"/>
+  <line x1="32" y1="272" x2="1248" y2="272" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="303" font-size="15" font-weight="600" fill="#123247">Resource path</text>
+  <text x="226" y="303" font-size="15" font-weight="400" fill="#2B3A48">/resources/aiplatform/projects/123456789012/locations</text>
+  <text x="226" y="325" font-size="15" font-weight="400" fill="#2B3A48">/us-central1/reasoningEngines/8890…</text>
+  <text x="729" y="303" font-size="15" font-weight="400" fill="#2B3A48">Names this exact engine; policies bind to this agent, not</text>
+  <text x="729" y="325" font-size="15" font-weight="400" fill="#2B3A48">a class of agents</text>
+  <line x1="210" y1="84" x2="210" y2="344" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="713" y1="84" x2="713" y2="344" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="260" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

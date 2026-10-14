@@ -29,8 +29,8 @@
   <text x="410" y="226" font-size="12.5" fill="#1A2430">cert-bound token, mTLS + DPoP</text>
   <text x="410" y="244" font-size="12" fill="#5B6B7A">platform-managed workload credentials</text>
   <text x="410" y="286" font-size="11.5" font-weight="700" fill="#5B6B7A">VERIFIED BY</text>
-  <text x="410" y="306" font-size="12.5" fill="#1A2430">Agent Gateway + IAP extension</text>
-  <text x="410" y="324" font-size="12" fill="#5B6B7A">roles/iap.egressor + CEL per tool</text>
+  <text x="410" y="306" font-size="12.5" fill="#1A2430">Agent Gateway + IAP · Cloud Run · Google APIs</text>
+  <text x="410" y="324" font-size="12" fill="#5B6B7A">iap.egressor + CEL · run.invoker · API roles</text>
   <text x="410" y="366" font-size="11.5" font-weight="700" fill="#0B5A4E">DECIDES</text>
   <text x="410" y="386" font-size="12.5" fill="#0B5A4E">which tools/destinations it may reach</text>
   <text x="410" y="404" font-size="12" fill="#0B5A4E">(and read vs write, per tool)</text>

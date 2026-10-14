@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 382" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="382" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 3: The records vault: a private Patient Records MCP server — The product scenario: MCP, and a records service that trusts only the badge</text>
+  <rect x="32" y="84" width="1216" height="266" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">MCP method</text>
+  <text x="294" y="115" font-size="15" font-weight="700" fill="#FFFFFF">What it does</text>
+  <text x="658" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Who cares about it in this lab</text>
+  <rect x="33" y="134" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">initialize</text>
+  <text x="294" y="165" font-size="15" font-weight="400" fill="#2B3A48">Opens a session and negotiates</text>
+  <text x="294" y="187" font-size="15" font-weight="400" fill="#2B3A48">capabilities</text>
+  <text x="658" y="165" font-size="15" font-weight="400" fill="#2B3A48">The ADK toolset at startup; carries no tool name (this matters</text>
+  <text x="658" y="187" font-size="15" font-weight="400" fill="#2B3A48">for the egress policy in Task 9)</text>
+  <rect x="33" y="206" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="206" x2="1248" y2="206" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="237" font-size="15" font-weight="600" fill="#123247">tools/list</text>
+  <text x="294" y="237" font-size="15" font-weight="400" fill="#2B3A48">Returns the catalog with schemas and</text>
+  <text x="294" y="259" font-size="15" font-weight="400" fill="#2B3A48">annotations</text>
+  <text x="658" y="237" font-size="15" font-weight="400" fill="#2B3A48">The ADK toolset; the same catalog is registered in Agent Registry</text>
+  <text x="658" y="259" font-size="15" font-weight="400" fill="#2B3A48">as toolspec.json</text>
+  <rect x="33" y="278" width="1214" height="71" rx="9" fill="#FFFFFF"/>
+  <rect x="33" y="278" width="1214" height="10" fill="#FFFFFF"/>
+  <line x1="32" y1="278" x2="1248" y2="278" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="309" font-size="15" font-weight="600" fill="#123247">tools/call</text>
+  <text x="294" y="309" font-size="15" font-weight="400" fill="#2B3A48">Invokes one named tool with arguments</text>
+  <text x="658" y="309" font-size="15" font-weight="400" fill="#2B3A48">The gateway parses it to see the tool name; IAP&#x27;s CEL condition</text>
+  <text x="658" y="331" font-size="15" font-weight="400" fill="#2B3A48">decides read versus write</text>
+  <line x1="278" y1="84" x2="278" y2="350" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="642" y1="84" x2="642" y2="350" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="266" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

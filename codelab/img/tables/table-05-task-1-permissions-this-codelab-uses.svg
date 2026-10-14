@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 604" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="604" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 1: Prepare the project and the identity foundation — Permissions this codelab uses</text>
+  <rect x="32" y="84" width="1216" height="488" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Operator role</text>
+  <text x="548" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Needed for</text>
+  <rect x="33" y="134" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">roles/run.admin, roles/iam.serviceAccountUser</text>
+  <text x="548" y="165" font-size="15" font-weight="400" fill="#2B3A48">Deploy the three Cloud Run services, act as their runtime accounts, and name</text>
+  <text x="548" y="187" font-size="15" font-weight="400" fill="#2B3A48">the agent&#x27;s identity as the records service&#x27;s invoker</text>
+  <rect x="33" y="206" width="1214" height="50" fill="#F4F7FA"/>
+  <line x1="32" y1="206" x2="1248" y2="206" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="237" font-size="15" font-weight="600" fill="#123247">roles/aiplatform.user</text>
+  <text x="548" y="237" font-size="15" font-weight="400" fill="#2B3A48">Deploy the clinical assistant to Agent Runtime</text>
+  <rect x="33" y="256" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="256" x2="1248" y2="256" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="287" font-size="15" font-weight="600" fill="#123247">roles/agentregistry.editor</text>
+  <text x="548" y="287" font-size="15" font-weight="400" fill="#2B3A48">Register the MCP server, the platform endpoints, and the A2A agent card</text>
+  <rect x="33" y="306" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="306" x2="1248" y2="306" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="337" font-size="15" font-weight="600" fill="#123247">roles/serviceextensions.admin,</text>
+  <text x="48" y="359" font-size="15" font-weight="600" fill="#123247">roles/networksecurity.admin, roles/iap.admin</text>
+  <text x="548" y="337" font-size="15" font-weight="400" fill="#2B3A48">Create the gateway&#x27;s extensions and policies and configure IAP as its</text>
+  <text x="548" y="359" font-size="15" font-weight="400" fill="#2B3A48">decision engine</text>
+  <rect x="33" y="378" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="378" x2="1248" y2="378" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="409" font-size="15" font-weight="600" fill="#123247">roles/modelarmor.admin</text>
+  <text x="548" y="409" font-size="15" font-weight="400" fill="#2B3A48">Create the Model Armor templates</text>
+  <rect x="33" y="428" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="428" x2="1248" y2="428" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="459" font-size="15" font-weight="600" fill="#123247">roles/resourcemanager.projectIamAdmin</text>
+  <text x="548" y="459" font-size="15" font-weight="400" fill="#2B3A48">Bind the agent&#x27;s SPIFFE principal to roles/iap.egressor and the Google API</text>
+  <text x="548" y="481" font-size="15" font-weight="400" fill="#2B3A48">roles it calls</text>
+  <rect x="33" y="500" width="1214" height="71" rx="9" fill="#FFFFFF"/>
+  <rect x="33" y="500" width="1214" height="10" fill="#FFFFFF"/>
+  <line x1="32" y1="500" x2="1248" y2="500" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="531" font-size="15" font-weight="600" fill="#123247">roles/compute.networkAdmin, roles/monitoring.editor,</text>
+  <text x="48" y="553" font-size="15" font-weight="600" fill="#123247">roles/logging.configWriter</text>
+  <text x="548" y="531" font-size="15" font-weight="400" fill="#2B3A48">Optional observability extension (scripts/11-observability.sh)</text>
+  <line x1="532" y1="84" x2="532" y2="572" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="488" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

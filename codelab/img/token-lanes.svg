@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 740" role="img" aria-labelledby="title desc">
+<title id="title">Identity token ≠ access token ≠ agent identity</title><desc id="desc">Use the credential intended for the receiver. A JWT encoding alone tells you none of its permissions. IAP egress policy and IAP enabled directly on Cloud Run are distinct configurations.</desc>
+<rect width="1120" height="740" rx="18" fill="#f8fafb"/>
+<g font-family="Arial, sans-serif">
+<text x="42" y="54" font-size="27" font-weight="700" fill="#123247">Identity token ≠ access token ≠ agent identity</text>
+<text x="42" y="86" font-size="16" fill="#4b6472">Use the credential intended for the receiver. A JWT encoding alone tells you none of its permissions.</text>
+<rect x="40" y="120" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="120" width="184" height="82" rx="10" fill="#fff1d7"/>
+<text x="60" y="166" font-size="17" font-weight="700" fill="#805600">HOSPITAL</text>
+<text x="250" y="151" font-size="19" font-weight="700" fill="#123247">Clinician access token</text>
+<text x="250" y="179" font-size="16" fill="#4b6472">Receiver: MCP application. Audience: patient-records-mcp. Header: X-Clinician-Token.</text>
+<rect x="40" y="220" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="220" width="184" height="82" rx="10" fill="#e6edf6"/>
+<text x="60" y="266" font-size="17" font-weight="700" fill="#294d77">GOOGLE APIs</text>
+<text x="250" y="251" font-size="19" font-weight="700" fill="#123247">Google OAuth access token</text>
+<text x="250" y="279" font-size="16" fill="#4b6472">Receiver: Google APIs (Model Armor, Vertex AI, Registry, Telemetry); plain OAuth token across gateway TLS.</text>
+<rect x="40" y="320" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="320" width="184" height="82" rx="10" fill="#e6edf6"/>
+<text x="60" y="366" font-size="17" font-weight="700" fill="#294d77">CLOUD RUN</text>
+<text x="250" y="351" font-size="19" font-weight="700" fill="#123247">The agent's own Google ID token for a private backend</text>
+<text x="250" y="379" font-size="16" fill="#4b6472">Receiver: Cloud Run ingress (run.invoker on the agent principal). Audience: service URL. No rows.</text>
+<rect x="40" y="420" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="420" width="184" height="82" rx="10" fill="#e3f2ef"/>
+<text x="60" y="466" font-size="17" font-weight="700" fill="#116858">AGENT IDENTITY</text>
+<text x="250" y="451" font-size="19" font-weight="700" fill="#123247">SPIFFE principal and platform workload credentials</text>
+<text x="250" y="479" font-size="16" fill="#4b6472">Receiver: gateway/IAP policy, and Cloud Run IAM as the invoker. Never the clinician token.</text>
+<rect x="40" y="520" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="520" width="184" height="82" rx="10" fill="#fee8e4"/>
+<text x="60" y="566" font-size="17" font-weight="700" fill="#a23525">IAP ASSERTION</text>
+<text x="250" y="551" font-size="19" font-weight="700" fill="#123247">A downstream assertion header is not a caller credential</text>
+<text x="250" y="579" font-size="16" fill="#4b6472">Do not substitute X-Goog-Iap-Jwt-Assertion for verified identity or gateway evidence.</text>
+<text x="42" y="700" font-size="15" fill="#4b6472">IAP egress policy and IAP enabled directly on Cloud Run are distinct configurations.</text>
+</g></svg>

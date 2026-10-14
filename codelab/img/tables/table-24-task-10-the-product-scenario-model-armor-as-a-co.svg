@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 432" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="432" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 10: Model Armor at the gateway and the PHI check — The product scenario: Model Armor as a CONTENT_AUTHZ extension</text>
+  <rect x="32" y="84" width="1216" height="316" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Setting</text>
+  <text x="328" y="115" font-size="15" font-weight="700" fill="#FFFFFF">In this lab</text>
+  <text x="830" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Effect</text>
+  <rect x="33" y="134" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">service</text>
+  <text x="328" y="165" font-size="15" font-weight="400" fill="#2B3A48">modelarmor.us-central1.rep.googleapis.com</text>
+  <text x="830" y="165" font-size="15" font-weight="400" fill="#2B3A48">Regional, same region as the gateway and the</text>
+  <text x="830" y="187" font-size="15" font-weight="400" fill="#2B3A48">templates</text>
+  <rect x="33" y="206" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="206" x2="1248" y2="206" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="237" font-size="15" font-weight="600" fill="#123247">request_template_id /</text>
+  <text x="48" y="259" font-size="15" font-weight="600" fill="#123247">response_template_id</text>
+  <text x="328" y="237" font-size="15" font-weight="400" fill="#2B3A48">Both the injection template; the response side later</text>
+  <text x="328" y="259" font-size="15" font-weight="400" fill="#2B3A48">switches to the strict PHI template</text>
+  <text x="830" y="237" font-size="15" font-weight="400" fill="#2B3A48">Requests and responses can be screened by</text>
+  <text x="830" y="259" font-size="15" font-weight="400" fill="#2B3A48">different policies</text>
+  <rect x="33" y="278" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="278" x2="1248" y2="278" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="309" font-size="15" font-weight="600" fill="#123247">failOpen: false</text>
+  <text x="328" y="309" font-size="15" font-weight="400" fill="#2B3A48">A callout failure or a MATCH_FOUND blocks</text>
+  <text x="830" y="309" font-size="15" font-weight="400" fill="#2B3A48">The payload never reaches the agent; the</text>
+  <text x="830" y="331" font-size="15" font-weight="400" fill="#2B3A48">toolset sees a failed call</text>
+  <rect x="33" y="350" width="1214" height="49" rx="9" fill="#F4F7FA"/>
+  <rect x="33" y="350" width="1214" height="10" fill="#F4F7FA"/>
+  <line x1="32" y1="350" x2="1248" y2="350" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="381" font-size="15" font-weight="600" fill="#123247">Policy limit</text>
+  <text x="328" y="381" font-size="15" font-weight="400" fill="#2B3A48">Four custom authorization policies per gateway</text>
+  <text x="830" y="381" font-size="15" font-weight="400" fill="#2B3A48">IAP and Model Armor use two</text>
+  <line x1="312" y1="84" x2="312" y2="400" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="814" y1="84" x2="814" y2="400" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="316" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 426" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="426" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 7: Agent Gateway and the IAP extension, in dry run — ✅ Verification</text>
+  <rect x="32" y="84" width="1216" height="310" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Field</text>
+  <text x="231" y="115" font-size="15" font-weight="700" fill="#FFFFFF">What it is</text>
+  <text x="603" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Why it matters here</text>
+  <rect x="33" y="134" width="1214" height="94" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">mtlsEndpoint</text>
+  <text x="231" y="165" font-size="15" font-weight="400" fill="#2B3A48">A Private Service Connect service</text>
+  <text x="231" y="187" font-size="15" font-weight="400" fill="#2B3A48">attachment in a Google-managed tenant</text>
+  <text x="231" y="209" font-size="15" font-weight="400" fill="#2B3A48">project</text>
+  <text x="603" y="165" font-size="15" font-weight="400" fill="#2B3A48">Where bound agents&#x27; egress is steered. Agent Runtime connects to it for</text>
+  <text x="603" y="187" font-size="15" font-weight="400" fill="#2B3A48">you; you never call it</text>
+  <rect x="33" y="228" width="1214" height="94" fill="#F4F7FA"/>
+  <line x1="32" y1="228" x2="1248" y2="228" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="259" font-size="15" font-weight="600" fill="#123247">rootCertificates</text>
+  <text x="231" y="259" font-size="15" font-weight="400" fill="#2B3A48">The CA certificates the gateway</text>
+  <text x="231" y="281" font-size="15" font-weight="400" fill="#2B3A48">presents</text>
+  <text x="603" y="259" font-size="15" font-weight="400" fill="#2B3A48">The gateway terminates and re-originates TLS so it can read MCP methods</text>
+  <text x="603" y="281" font-size="15" font-weight="400" fill="#2B3A48">and tool names. Prebuilt Agent Runtime images already trust these; a</text>
+  <text x="603" y="303" font-size="15" font-weight="400" fill="#2B3A48">bring-your-own container must install them</text>
+  <rect x="33" y="322" width="1214" height="71" rx="9" fill="#FFFFFF"/>
+  <rect x="33" y="322" width="1214" height="10" fill="#FFFFFF"/>
+  <line x1="32" y1="322" x2="1248" y2="322" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="353" font-size="15" font-weight="600" fill="#123247">serviceExtensions</text>
+  <text x="48" y="375" font-size="15" font-weight="600" fill="#123247">ServiceAccount</text>
+  <text x="231" y="353" font-size="15" font-weight="400" fill="#2B3A48">The account the gateway uses to call</text>
+  <text x="231" y="375" font-size="15" font-weight="400" fill="#2B3A48">its extensions (IAP, Model Armor)</text>
+  <text x="603" y="353" font-size="15" font-weight="400" fill="#2B3A48">Task 10 grants this account (alongside your project&#x27;s gcp-sa-dep</text>
+  <text x="603" y="375" font-size="15" font-weight="400" fill="#2B3A48">service agent) the Model Armor callout roles</text>
+  <line x1="215" y1="84" x2="215" y2="394" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="587" y1="84" x2="587" y2="394" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="310" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

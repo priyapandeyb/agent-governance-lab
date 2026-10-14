@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 288" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="288" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 7: Agent Gateway and the IAP extension, in dry run — The product scenario: Agent Gateway, Service Extensions, and IAP</text>
+  <rect x="32" y="84" width="1216" height="172" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Policy profile</text>
+  <text x="366" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Callout target in this lab</text>
+  <text x="722" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Decides</text>
+  <rect x="33" y="134" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">REQUEST_AUTHZ</text>
+  <text x="366" y="165" font-size="15" font-weight="400" fill="#2B3A48">IAP (service: iap.googleapis.com)</text>
+  <text x="722" y="165" font-size="15" font-weight="400" fill="#2B3A48">May this agent reach this destination / tool?</text>
+  <rect x="33" y="184" width="1214" height="71" rx="9" fill="#F4F7FA"/>
+  <rect x="33" y="184" width="1214" height="10" fill="#F4F7FA"/>
+  <line x1="32" y1="184" x2="1248" y2="184" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="215" font-size="15" font-weight="600" fill="#123247">CONTENT_AUTHZ (Task 10)</text>
+  <text x="366" y="215" font-size="15" font-weight="400" fill="#2B3A48">Model Armor</text>
+  <text x="722" y="215" font-size="15" font-weight="400" fill="#2B3A48">Does the payload carry an injection or a sensitive</text>
+  <text x="722" y="237" font-size="15" font-weight="400" fill="#2B3A48">identifier?</text>
+  <line x1="350" y1="84" x2="350" y2="256" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="706" y1="84" x2="706" y2="256" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="172" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

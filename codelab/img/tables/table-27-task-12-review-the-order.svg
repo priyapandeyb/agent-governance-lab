@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 676" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="676" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 12: Clean up — Review the order</text>
+  <rect x="32" y="84" width="1216" height="560" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Order</text>
+  <text x="254" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Resources</text>
+  <text x="821" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Command family</text>
+  <rect x="33" y="134" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">1</text>
+  <text x="254" y="165" font-size="15" font-weight="400" fill="#2B3A48">The Agent Runtime engine (its registry entry and identity go</text>
+  <text x="254" y="187" font-size="15" font-weight="400" fill="#2B3A48">with it)</text>
+  <text x="821" y="165" font-size="15" font-weight="400" fill="#2B3A48">DELETE .../reasoningEngines/ID?force=true via</text>
+  <text x="821" y="187" font-size="15" font-weight="400" fill="#2B3A48">the v1beta1 REST API</text>
+  <rect x="33" y="206" width="1214" height="94" fill="#F4F7FA"/>
+  <line x1="32" y1="206" x2="1248" y2="206" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="237" font-size="15" font-weight="600" fill="#123247">2</text>
+  <text x="254" y="237" font-size="15" font-weight="400" fill="#2B3A48">Observability resources (if scripts/11-observability.sh was</text>
+  <text x="254" y="259" font-size="15" font-weight="400" fill="#2B3A48">run): telemetry policy, alert policy, dashboard, the two</text>
+  <text x="254" y="281" font-size="15" font-weight="400" fill="#2B3A48">log-based metrics</text>
+  <text x="821" y="237" font-size="15" font-weight="400" fill="#2B3A48">telemetry-policies delete, monitoring policies</text>
+  <text x="821" y="259" font-size="15" font-weight="400" fill="#2B3A48">delete, dashboards delete, logging metrics</text>
+  <text x="821" y="281" font-size="15" font-weight="400" fill="#2B3A48">delete</text>
+  <rect x="33" y="300" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="300" x2="1248" y2="300" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="331" font-size="15" font-weight="600" fill="#123247">3</text>
+  <text x="254" y="331" font-size="15" font-weight="400" fill="#2B3A48">The two authorization policies, then the two extensions</text>
+  <text x="821" y="331" font-size="15" font-weight="400" fill="#2B3A48">authz-policies delete, authz-extensions delete</text>
+  <rect x="33" y="350" width="1214" height="50" fill="#F4F7FA"/>
+  <line x1="32" y1="350" x2="1248" y2="350" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="381" font-size="15" font-weight="600" fill="#123247">4</text>
+  <text x="254" y="381" font-size="15" font-weight="400" fill="#2B3A48">The gateway</text>
+  <text x="821" y="381" font-size="15" font-weight="400" fill="#2B3A48">agent-gateways delete</text>
+  <rect x="33" y="400" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="400" x2="1248" y2="400" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="431" font-size="15" font-weight="600" fill="#123247">5</text>
+  <text x="254" y="431" font-size="15" font-weight="400" fill="#2B3A48">Registry entries: MCP server, guideline agent, the seventeen</text>
+  <text x="254" y="453" font-size="15" font-weight="400" fill="#2B3A48">endpoints</text>
+  <text x="821" y="431" font-size="15" font-weight="400" fill="#2B3A48">agent-registry services delete</text>
+  <rect x="33" y="472" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="472" x2="1248" y2="472" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="503" font-size="15" font-weight="600" fill="#123247">6</text>
+  <text x="254" y="503" font-size="15" font-weight="400" fill="#2B3A48">The three Cloud Run services (the agent&#x27;s run.invoker</text>
+  <text x="254" y="525" font-size="15" font-weight="400" fill="#2B3A48">binding goes with the records service)</text>
+  <text x="821" y="503" font-size="15" font-weight="400" fill="#2B3A48">run services delete</text>
+  <rect x="33" y="544" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="544" x2="1248" y2="544" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="575" font-size="15" font-weight="600" fill="#123247">7</text>
+  <text x="254" y="575" font-size="15" font-weight="400" fill="#2B3A48">The two Model Armor templates and the SDP inspect template</text>
+  <text x="821" y="575" font-size="15" font-weight="400" fill="#2B3A48">model-armor templates delete, DLP REST DELETE</text>
+  <rect x="33" y="594" width="1214" height="49" rx="9" fill="#F4F7FA"/>
+  <rect x="33" y="594" width="1214" height="10" fill="#F4F7FA"/>
+  <line x1="32" y1="594" x2="1248" y2="594" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="625" font-size="15" font-weight="600" fill="#123247">8</text>
+  <text x="254" y="625" font-size="15" font-weight="400" fill="#2B3A48">The staging bucket</text>
+  <text x="821" y="625" font-size="15" font-weight="400" fill="#2B3A48">gcloud storage rm -r</text>
+  <line x1="238" y1="84" x2="238" y2="644" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="805" y1="84" x2="805" y2="644" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="560" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

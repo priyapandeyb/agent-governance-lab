@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 382" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="382" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Overview — The one idea this codelab is built on</text>
+  <rect x="32" y="84" width="1216" height="266" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Party</text>
+  <text x="249" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Credential</text>
+  <text x="652" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Verified by</text>
+  <text x="926" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Decides</text>
+  <rect x="33" y="134" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">Clinician (end</text>
+  <text x="48" y="187" font-size="15" font-weight="600" fill="#123247">user)</text>
+  <text x="249" y="165" font-size="15" font-weight="400" fill="#2B3A48">Hospital-IdP JWT (RS256), carried in</text>
+  <text x="249" y="187" font-size="15" font-weight="400" fill="#2B3A48">X-Clinician-Token</text>
+  <text x="652" y="165" font-size="15" font-weight="400" fill="#2B3A48">The MCP server, against the</text>
+  <text x="652" y="187" font-size="15" font-weight="400" fill="#2B3A48">IdP&#x27;s JWKS</text>
+  <text x="926" y="165" font-size="15" font-weight="400" fill="#2B3A48">Which patients&#x27; rows come back</text>
+  <rect x="33" y="206" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="206" x2="1248" y2="206" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="237" font-size="15" font-weight="600" fill="#123247">Clinical assistant</text>
+  <text x="48" y="259" font-size="15" font-weight="600" fill="#123247">agent</text>
+  <text x="249" y="237" font-size="15" font-weight="400" fill="#2B3A48">Agent Identity: a SPIFFE principal with a</text>
+  <text x="249" y="259" font-size="15" font-weight="400" fill="#2B3A48">platform-managed certificate (mTLS + DPoP)</text>
+  <text x="652" y="237" font-size="15" font-weight="400" fill="#2B3A48">Agent Gateway + the IAP</text>
+  <text x="652" y="259" font-size="15" font-weight="400" fill="#2B3A48">authorization extension</text>
+  <text x="926" y="237" font-size="15" font-weight="400" fill="#2B3A48">Which tools, agents, and endpoints</text>
+  <text x="926" y="259" font-size="15" font-weight="400" fill="#2B3A48">the agent may reach, per tool</text>
+  <rect x="33" y="278" width="1214" height="71" rx="9" fill="#FFFFFF"/>
+  <rect x="33" y="278" width="1214" height="10" fill="#FFFFFF"/>
+  <line x1="32" y1="278" x2="1248" y2="278" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="309" font-size="15" font-weight="600" fill="#123247">You, running gcloud</text>
+  <text x="249" y="309" font-size="15" font-weight="400" fill="#2B3A48">Google account</text>
+  <text x="652" y="309" font-size="15" font-weight="400" fill="#2B3A48">Cloud IAM</text>
+  <text x="926" y="309" font-size="15" font-weight="400" fill="#2B3A48">Who may build and configure the</text>
+  <text x="926" y="331" font-size="15" font-weight="400" fill="#2B3A48">stack</text>
+  <line x1="233" y1="84" x2="233" y2="350" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="636" y1="84" x2="636" y2="350" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="910" y1="84" x2="910" y2="350" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="266" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

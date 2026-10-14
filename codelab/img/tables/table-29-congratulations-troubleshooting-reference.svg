@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1376" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="1376" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Congratulations — Troubleshooting reference</text>
+  <rect x="32" y="84" width="1216" height="1260" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Symptom</text>
+  <text x="368" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Likely cause</text>
+  <text x="753" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Fix</text>
+  <rect x="33" y="134" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">SU_MAX_BATCH_SIZE_EXCEEDED</text>
+  <text x="48" y="187" font-size="15" font-weight="600" fill="#123247">enabling APIs</text>
+  <text x="368" y="165" font-size="15" font-weight="400" fill="#2B3A48">More than 20 services passed to a single</text>
+  <text x="368" y="187" font-size="15" font-weight="400" fill="#2B3A48">gcloud services enable call</text>
+  <text x="753" y="165" font-size="15" font-weight="400" fill="#2B3A48">Run the two batched gcloud services enable commands in</text>
+  <text x="753" y="187" font-size="15" font-weight="400" fill="#2B3A48">Task 1 (./scripts/01-enable-apis.sh)</text>
+  <rect x="33" y="206" width="1214" height="116" fill="#F4F7FA"/>
+  <line x1="32" y1="206" x2="1248" y2="206" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="237" font-size="15" font-weight="600" fill="#123247">400 FAILED_PRECONDITION:</text>
+  <text x="48" y="259" font-size="15" font-weight="600" fill="#123247">Permission denied to get Agent</text>
+  <text x="48" y="281" font-size="15" font-weight="600" fill="#123247">Gateway during</text>
+  <text x="48" y="303" font-size="15" font-weight="600" fill="#123247">07-deploy-agents.sh</text>
+  <text x="368" y="237" font-size="15" font-weight="400" fill="#2B3A48">Vertex AI service agent (service-PROJECT</text>
+  <text x="368" y="259" font-size="15" font-weight="400" fill="#2B3A48">_NUMBER@gcp-sa-aiplatform.iam.gserviceac</text>
+  <text x="368" y="281" font-size="15" font-weight="400" fill="#2B3A48">count.com) does not exist yet or lacks</text>
+  <text x="368" y="303" font-size="15" font-weight="400" fill="#2B3A48">roles/networkservices.viewer</text>
+  <text x="753" y="237" font-size="15" font-weight="400" fill="#2B3A48">Run gcloud beta services identity create</text>
+  <text x="753" y="259" font-size="15" font-weight="400" fill="#2B3A48">--service=aiplatform.googleapis.com</text>
+  <text x="753" y="281" font-size="15" font-weight="400" fill="#2B3A48">--project=&quot;$PROJECT_ID&quot; and grant it</text>
+  <text x="753" y="303" font-size="15" font-weight="400" fill="#2B3A48">roles/networkservices.viewer (Task 8)</text>
+  <rect x="33" y="322" width="1214" height="116" fill="#FFFFFF"/>
+  <line x1="32" y1="322" x2="1248" y2="322" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="353" font-size="15" font-weight="600" fill="#123247">401 UNAUTHENTICATED on</text>
+  <text x="48" y="375" font-size="15" font-weight="600" fill="#123247">create_session while gateway</text>
+  <text x="48" y="397" font-size="15" font-weight="600" fill="#123247">logs ALLOWED and</text>
+  <text x="48" y="419" font-size="15" font-weight="600" fill="#123247">requestWasTlsIntercepted: true</text>
+  <text x="368" y="353" font-size="15" font-weight="400" fill="#2B3A48">Certificate-bound access token rejected</text>
+  <text x="368" y="375" font-size="15" font-weight="400" fill="#2B3A48">across gateway TLS interception</text>
+  <text x="753" y="353" font-size="15" font-weight="400" fill="#2B3A48">Ensure &quot;GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN&quot;:</text>
+  <text x="753" y="375" font-size="15" font-weight="400" fill="#2B3A48">&quot;false&quot; is in deploy/deploy_root_agent.py env_vars and</text>
+  <text x="753" y="397" font-size="15" font-weight="400" fill="#2B3A48">run python3 deploy/deploy_root_agent.py --update</text>
+  <rect x="33" y="438" width="1214" height="160" fill="#F4F7FA"/>
+  <line x1="32" y1="438" x2="1248" y2="438" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="469" font-size="15" font-weight="600" fill="#123247">Permission &#x27;modelarmor.templates</text>
+  <text x="48" y="491" font-size="15" font-weight="600" fill="#123247">.useToSanitizeUserPrompt&#x27; denied</text>
+  <text x="48" y="513" font-size="15" font-weight="600" fill="#123247">(or aiplatform / agentregistry</text>
+  <text x="48" y="535" font-size="15" font-weight="600" fill="#123247">403) when gateway says ALLOWED</text>
+  <text x="368" y="469" font-size="15" font-weight="400" fill="#2B3A48">$AGENT_PRINCIPAL has roles/iap.egressor</text>
+  <text x="368" y="491" font-size="15" font-weight="400" fill="#2B3A48">at the gateway, but lacks the</text>
+  <text x="368" y="513" font-size="15" font-weight="400" fill="#2B3A48">destination Google API IAM roles on the</text>
+  <text x="368" y="535" font-size="15" font-weight="400" fill="#2B3A48">project</text>
+  <text x="753" y="469" font-size="15" font-weight="400" fill="#2B3A48">Run the project IAM loop in Task 9</text>
+  <text x="753" y="491" font-size="15" font-weight="400" fill="#2B3A48">(./scripts/08-grant-egress-and-enforce.sh) to grant</text>
+  <text x="753" y="513" font-size="15" font-weight="400" fill="#2B3A48">roles/aiplatform.user, roles/modelarmor.user,</text>
+  <text x="753" y="535" font-size="15" font-weight="400" fill="#2B3A48">roles/agentregistry.viewer,</text>
+  <text x="753" y="557" font-size="15" font-weight="400" fill="#2B3A48">roles/serviceusage.serviceUsageConsumer, and the</text>
+  <text x="753" y="579" font-size="15" font-weight="400" fill="#2B3A48">telemetry writer roles to $AGENT_PRINCIPAL</text>
+  <rect x="33" y="598" width="1214" height="94" fill="#FFFFFF"/>
+  <line x1="32" y1="598" x2="1248" y2="598" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="629" font-size="15" font-weight="600" fill="#123247">Assistant says &quot;I do not have a</text>
+  <text x="48" y="651" font-size="15" font-weight="600" fill="#123247">tool to list your patients&quot;</text>
+  <text x="48" y="673" font-size="15" font-weight="600" fill="#123247">(get_tools timed out after 5s)</text>
+  <text x="368" y="629" font-size="15" font-weight="400" fill="#2B3A48">patient-records-mcp cold start exceeded</text>
+  <text x="368" y="651" font-size="15" font-weight="400" fill="#2B3A48">ADK&#x27;s 5s MCP initialize timeout</text>
+  <text x="753" y="629" font-size="15" font-weight="400" fill="#2B3A48">Deploy or update patient-records-mcp with</text>
+  <text x="753" y="651" font-size="15" font-weight="400" fill="#2B3A48">--min-instances=1 (Task 3)</text>
+  <rect x="33" y="692" width="1214" height="94" fill="#F4F7FA"/>
+  <line x1="32" y1="692" x2="1248" y2="692" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="723" font-size="15" font-weight="600" fill="#123247">Agent startup fails with 403s in</text>
+  <text x="48" y="745" font-size="15" font-weight="600" fill="#123247">gateway logs</text>
+  <text x="368" y="723" font-size="15" font-weight="400" fill="#2B3A48">A platform endpoint is missing from</text>
+  <text x="368" y="745" font-size="15" font-weight="400" fill="#2B3A48">Agent Registry or lacks</text>
+  <text x="368" y="767" font-size="15" font-weight="400" fill="#2B3A48">roles/iap.egressor</text>
+  <text x="753" y="723" font-size="15" font-weight="400" fill="#2B3A48">Re-run ./scripts/05-register-registry.sh and</text>
+  <text x="753" y="745" font-size="15" font-weight="400" fill="#2B3A48">./scripts/08-grant-egress-and-enforce.sh (both read</text>
+  <text x="753" y="767" font-size="15" font-weight="400" fill="#2B3A48">PLATFORM_ENDPOINTS from scripts/00-env.sh)</text>
+  <rect x="33" y="786" width="1214" height="94" fill="#FFFFFF"/>
+  <line x1="32" y1="786" x2="1248" y2="786" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="817" font-size="15" font-weight="600" fill="#123247">403 Egress request is not</text>
+  <text x="48" y="839" font-size="15" font-weight="600" fill="#123247">authorized on a read tool</text>
+  <text x="368" y="817" font-size="15" font-weight="400" fill="#2B3A48">Missing roles/iap.egressor for this</text>
+  <text x="368" y="839" font-size="15" font-weight="400" fill="#2B3A48">principal, or spiffe:// was bound</text>
+  <text x="368" y="861" font-size="15" font-weight="400" fill="#2B3A48">instead of principal://</text>
+  <text x="753" y="817" font-size="15" font-weight="400" fill="#2B3A48">Re-run ./scripts/08-grant-egress-and-enforce.sh after</text>
+  <text x="753" y="839" font-size="15" font-weight="400" fill="#2B3A48">source scripts/rendered/agent.env</text>
+  <rect x="33" y="880" width="1214" height="116" fill="#F4F7FA"/>
+  <line x1="32" y1="880" x2="1248" y2="880" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="911" font-size="15" font-weight="600" fill="#123247">Every MCP tool returns</text>
+  <text x="48" y="933" font-size="15" font-weight="600" fill="#123247">unauthenticated</text>
+  <text x="368" y="911" font-size="15" font-weight="400" fill="#2B3A48">Clinician JWT missing from session</text>
+  <text x="368" y="933" font-size="15" font-weight="400" fill="#2B3A48">state, expired (1 h TTL), or</text>
+  <text x="368" y="955" font-size="15" font-weight="400" fill="#2B3A48">hospital-idp restarted with a new</text>
+  <text x="368" y="977" font-size="15" font-weight="400" fill="#2B3A48">in-memory key</text>
+  <text x="753" y="911" font-size="15" font-weight="400" fill="#2B3A48">Re-run via clients/chat_remote.py (which mints a fresh</text>
+  <text x="753" y="933" font-size="15" font-weight="400" fill="#2B3A48">token); keep hospital-idp at --max-instances=1</text>
+  <rect x="33" y="996" width="1214" height="116" fill="#FFFFFF"/>
+  <line x1="32" y1="996" x2="1248" y2="996" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="1027" font-size="15" font-weight="600" fill="#123247">validate_agent_card.py fails</text>
+  <text x="48" y="1049" font-size="15" font-weight="600" fill="#123247">with card url is</text>
+  <text x="48" y="1071" font-size="15" font-weight="600" fill="#123247">&#x27;http://localhost:8000&#x27; or</text>
+  <text x="48" y="1093" font-size="15" font-weight="600" fill="#123247">explicit :443</text>
+  <text x="368" y="1027" font-size="15" font-weight="400" fill="#2B3A48">A2A_HOST env vars missing on</text>
+  <text x="368" y="1049" font-size="15" font-weight="400" fill="#2B3A48">guideline-agent, or :443 included in</text>
+  <text x="368" y="1071" font-size="15" font-weight="400" fill="#2B3A48">AgentCard.url</text>
+  <text x="753" y="1027" font-size="15" font-weight="400" fill="#2B3A48">Redeploy guideline-agent via</text>
+  <text x="753" y="1049" font-size="15" font-weight="400" fill="#2B3A48">./scripts/07-deploy-agents.sh</text>
+  <rect x="33" y="1112" width="1214" height="138" fill="#F4F7FA"/>
+  <line x1="32" y1="1112" x2="1248" y2="1112" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="1143" font-size="15" font-weight="600" fill="#123247">PERMISSION_DENIED on gateway</text>
+  <text x="48" y="1165" font-size="15" font-weight="600" fill="#123247">Model Armor callout</text>
+  <text x="368" y="1143" font-size="15" font-weight="400" fill="#2B3A48">Service Extensions service agent</text>
+  <text x="368" y="1165" font-size="15" font-weight="400" fill="#2B3A48">(service-PROJECT_NUMBER@gcp-sa-dep... or</text>
+  <text x="368" y="1187" font-size="15" font-weight="400" fill="#2B3A48">agentGatewayCard.serviceExtensionsServic</text>
+  <text x="368" y="1209" font-size="15" font-weight="400" fill="#2B3A48">eAccount) lacks Model Armor callout</text>
+  <text x="368" y="1231" font-size="15" font-weight="400" fill="#2B3A48">roles</text>
+  <text x="753" y="1143" font-size="15" font-weight="400" fill="#2B3A48">Re-run ./scripts/09-model-armor-gateway.sh to grant</text>
+  <text x="753" y="1165" font-size="15" font-weight="400" fill="#2B3A48">roles/modelarmor.calloutUser,</text>
+  <text x="753" y="1187" font-size="15" font-weight="400" fill="#2B3A48">roles/serviceusage.serviceUsageConsumer, and</text>
+  <text x="753" y="1209" font-size="15" font-weight="400" fill="#2B3A48">roles/modelarmor.user to both service accounts</text>
+  <rect x="33" y="1250" width="1214" height="93" rx="9" fill="#FFFFFF"/>
+  <rect x="33" y="1250" width="1214" height="10" fill="#FFFFFF"/>
+  <line x1="32" y1="1250" x2="1248" y2="1250" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="1281" font-size="15" font-weight="600" fill="#123247">Gateway delete fails during</text>
+  <text x="48" y="1303" font-size="15" font-weight="600" fill="#123247">99-cleanup.sh</text>
+  <text x="368" y="1281" font-size="15" font-weight="400" fill="#2B3A48">Reasoning Engine deletion is still</text>
+  <text x="368" y="1303" font-size="15" font-weight="400" fill="#2B3A48">completing asynchronously and holding a</text>
+  <text x="368" y="1325" font-size="15" font-weight="400" fill="#2B3A48">reference to the gateway</text>
+  <text x="753" y="1281" font-size="15" font-weight="400" fill="#2B3A48">Wait 60 seconds and re-run ./scripts/99-cleanup.sh</text>
+  <line x1="352" y1="84" x2="352" y2="1344" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="737" y1="84" x2="737" y2="1344" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="1260" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 740" role="img" aria-labelledby="title desc">
+<title id="title">Which gate made the decision?</title><desc id="desc">Agent reach and clinician row access must both succeed. Direct calls without the ingress ID token are rejected. A model refusal is not gateway evidence.</desc>
+<rect width="1120" height="740" rx="18" fill="#f8fafb"/>
+<g font-family="Arial, sans-serif">
+<text x="42" y="54" font-size="27" font-weight="700" fill="#123247">Which gate made the decision?</text>
+<text x="42" y="86" font-size="16" fill="#4b6472">Agent reach and clinician row access must both succeed.</text>
+<rect x="40" y="120" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="120" width="184" height="82" rx="10" fill="#e3f2ef"/>
+<text x="60" y="166" font-size="17" font-weight="700" fill="#116858">ALLOW</text>
+<text x="250" y="151" font-size="19" font-weight="700" fill="#123247">Allowed agent + clinician A + read P-1001</text>
+<text x="250" y="179" font-size="16" fill="#4b6472">IAP permits the read tool; the MCP server permits the care-team row.</text>
+<rect x="40" y="220" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="220" width="184" height="82" rx="10" fill="#fff1d7"/>
+<text x="60" y="266" font-size="17" font-weight="700" fill="#805600">ROW DENIAL</text>
+<text x="250" y="251" font-size="19" font-weight="700" fill="#123247">Allowed agent + clinician A + read P-2001</text>
+<text x="250" y="279" font-size="16" fill="#4b6472">The tool is reachable, but the MCP result is access_denied.</text>
+<rect x="40" y="320" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="320" width="184" height="82" rx="10" fill="#fff1d7"/>
+<text x="60" y="366" font-size="17" font-weight="700" fill="#805600">AUTH FAILURE</text>
+<text x="250" y="351" font-size="19" font-weight="700" fill="#123247">Allowed agent + no hospital token</text>
+<text x="250" y="379" font-size="16" fill="#4b6472">The MCP result is unauthenticated; an agent identity cannot stand in for a clinician.</text>
+<rect x="40" y="420" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="420" width="184" height="82" rx="10" fill="#fee8e4"/>
+<text x="60" y="466" font-size="17" font-weight="700" fill="#a23525">TOOL DENIAL</text>
+<text x="250" y="451" font-size="19" font-weight="700" fill="#123247">Allowed agent + clinician A + add_progress_note</text>
+<text x="250" y="479" font-size="16" fill="#4b6472">IAP denies the write before the MCP handler runs. Confirm an actual attempted call.</text>
+<rect x="40" y="520" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
+<rect x="40" y="520" width="184" height="82" rx="10" fill="#fee8e4"/>
+<text x="60" y="566" font-size="17" font-weight="700" fill="#a23525">CONTENT BLOCK</text>
+<text x="250" y="551" font-size="19" font-weight="700" fill="#123247">Allowed read + valid clinician + unsafe returned text</text>
+<text x="250" y="579" font-size="16" fill="#4b6472">Model Armor blocks a matching result after the data service authorizes the read.</text>
+<text x="42" y="700" font-size="15" fill="#4b6472">Direct calls without the ingress ID token are rejected. A model refusal is not gateway evidence.</text>
+</g></svg>

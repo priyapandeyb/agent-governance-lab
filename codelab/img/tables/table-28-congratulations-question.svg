@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 554" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="554" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Congratulations</text>
+  <rect x="32" y="84" width="1216" height="438" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Question</text>
+  <text x="291" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Answered by</text>
+  <text x="776" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Evidence you collected</text>
+  <rect x="33" y="134" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">Who is the clinician?</text>
+  <text x="291" y="165" font-size="15" font-weight="400" fill="#2B3A48">Hospital-IdP JWT, validated by the MCP server</text>
+  <text x="776" y="165" font-size="15" font-weight="400" fill="#2B3A48">Decoded claims; Authenticated clinician log lines</text>
+  <rect x="33" y="184" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="184" x2="1248" y2="184" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="215" font-size="15" font-weight="600" fill="#123247">Which patients may they</text>
+  <text x="48" y="237" font-size="15" font-weight="600" fill="#123247">see?</text>
+  <text x="291" y="215" font-size="15" font-weight="400" fill="#2B3A48">Care-team filter inside the data service</text>
+  <text x="776" y="215" font-size="15" font-weight="400" fill="#2B3A48">access_denied for P-2001</text>
+  <rect x="33" y="256" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="256" x2="1248" y2="256" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="287" font-size="15" font-weight="600" fill="#123247">Which agent is calling?</text>
+  <text x="291" y="287" font-size="15" font-weight="400" fill="#2B3A48">Agent Identity (SPIFFE principal)</text>
+  <text x="776" y="287" font-size="15" font-weight="400" fill="#2B3A48">AGENT_IDENTITY and IAP principalSubject</text>
+  <rect x="33" y="306" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="306" x2="1248" y2="306" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="337" font-size="15" font-weight="600" fill="#123247">What may that agent</text>
+  <text x="48" y="359" font-size="15" font-weight="600" fill="#123247">reach?</text>
+  <text x="291" y="337" font-size="15" font-weight="400" fill="#2B3A48">Agent Registry (three collections) + Agent Gateway</text>
+  <text x="291" y="359" font-size="15" font-weight="400" fill="#2B3A48">+ IAP REQUEST_AUTHZ</text>
+  <text x="776" y="337" font-size="15" font-weight="400" fill="#2B3A48">Both agents listed; 403 on add_progress_note; A2A</text>
+  <text x="776" y="359" font-size="15" font-weight="400" fill="#2B3A48">hop matched to agents/guideline-agent</text>
+  <rect x="33" y="378" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="378" x2="1248" y2="378" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="409" font-size="15" font-weight="600" fill="#123247">Is the content safe?</text>
+  <text x="291" y="409" font-size="15" font-weight="400" fill="#2B3A48">Model Armor in the agent and as the gateway&#x27;s</text>
+  <text x="291" y="431" font-size="15" font-weight="400" fill="#2B3A48">CONTENT_AUTHZ extension</text>
+  <text x="776" y="409" font-size="15" font-weight="400" fill="#2B3A48">Two extension verdicts per gateway row; MRN block</text>
+  <rect x="33" y="450" width="1214" height="71" rx="9" fill="#F4F7FA"/>
+  <rect x="33" y="450" width="1214" height="10" fill="#F4F7FA"/>
+  <line x1="32" y1="450" x2="1248" y2="450" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="481" font-size="15" font-weight="600" fill="#123247">Can we prove all of it</text>
+  <text x="48" y="503" font-size="15" font-weight="600" fill="#123247">later?</text>
+  <text x="291" y="481" font-size="15" font-weight="400" fill="#2B3A48">Gateway audit logs (clients/gateway_log.py) and</text>
+  <text x="291" y="503" font-size="15" font-weight="400" fill="#2B3A48">OpenTelemetry traces (content off)</text>
+  <text x="776" y="481" font-size="15" font-weight="400" fill="#2B3A48">Per-call gateway rows with per-policy verdicts</text>
+  <line x1="275" y1="84" x2="275" y2="522" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="760" y1="84" x2="760" y2="522" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="438" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

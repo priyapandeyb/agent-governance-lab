@@ -4,7 +4,10 @@ Code repository for the **Agent Governance Lab** codelab by Priya Pandey.
 
 A hands-on lab that builds a clinician-facing multi-agent system over **synthetic** patient records and then governs it end to end with **Agent Identity**, **Agent Registry**, **Agent Gateway** with the **IAP** and **Model Armor** service extensions, **A2A agent cards**, and **observability** that never exports patient data into telemetry. Every control is proven on real traffic: an allowed read, a denied cross-panel read, a screened document, a write blocked on the wire, and the audit rows and traces that show which layer decided.
 
-This repository holds what the lab *runs*: scripts, agents, the MCP server, the mock identity provider, clients, and tests. The guided step-by-step codelab and its long-form companion are distributed separately with the workshop (see [Companion documents](#-companion-documents)).
+This repository holds both the runnable code (scripts, agents, the MCP server, the mock identity provider, clients, and tests) and the complete step-by-step workshop codelab:
+
+- 👉 **[Start the Step-by-Step Workshop Codelab (`CODELAB.md`)](CODELAB.md)** — full narrative, architecture diagrams, tables, copy-pasteable commands in order, expected outputs, verification checks, FAQ, and troubleshooting.
+- 📖 **[Read the Companion Deep Dive (`codelab/deep-dive.md`)](codelab/deep-dive.md)** — full design rationale, code walkthroughs, observability module, production notes, and reference tables.
 
 ![A clinician, an assistant agent, a protective gateway, a records vault, and a guideline library](docs/images/healthcare-gateway-hero.png)
 
@@ -80,7 +83,7 @@ A perfectly authorized agent with no clinician token gets zero patient data. A v
 | Agent Registry (three collections) | What exists and what may be reached | `05-register-registry.sh`, `07-deploy-agents.sh` | `agents list` shows two, `mcp-servers list` one, `endpoints list` every platform hostname |
 | Agent Gateway + IAP `REQUEST_AUTHZ` | May *this agent* reach *this tool* | `06-create-gateway.sh` (dry run) → `08-grant-egress-and-enforce.sh` (enforced) | Gateway rows with per-extension verdicts; IAP audit rows with `iamEnforcementMode` |
 | Agent Identity | Which agent is calling, at the gateway *and* at Cloud Run's front door (`roles/run.invoker` is bound to the agent principal; no service account on the data path) | `deploy/deploy_root_agent.py` (`identity_type=AGENT_IDENTITY`), `08-grant-egress-and-enforce.sh` | `AGENT_IDENTITY` principal; IAP `principalSubject`; `Calling agent: spiffe://…` lines in the MCP server log |
-| Model Armor `CONTENT_AUTHZ` at the gateway | Is the payload on the wire safe | `10-model-armor-gateway.sh` | A second extension verdict per gateway row; the MRN block |
+| Model Armor `CONTENT_AUTHZ` at the gateway | Is the payload on the wire safe | `09-model-armor-gateway.sh` | A second extension verdict per gateway row; the MRN block |
 | Observability | Can we prove all of it later | `11-observability.sh` | Traces across the A2A hop, dashboard, alert, three correlated audit streams |
 
 ### Rollout: observe, grant, enforce
@@ -102,20 +105,19 @@ Read-only annotation **and** an explicit allowlist (a newly added read-only tool
 
 ![Which gate made the decision: agent reach and clinician row access must both succeed](docs/diagrams/authorization-outcomes.svg)
 
-`scripts/09-demo.sh` runs eight beats. Each makes exactly one thing hostile, so every denial is attributable to a single control:
+`scripts/10-demo.sh` runs seven beats. Each makes exactly one thing hostile, so every denial is attributable to a single control:
 
 | # | Prompt (abridged) | Expected outcome | Control |
 |---|---|---|---|
 | 1 | List my patients; labs for P-1001; flag abnormal | Panel P-1001..P-1003; labs with HbA1c and eGFR flagged | MCP care-team check; read tools clear the gateway CEL |
 | 2 | Summary for P-2001 | `access_denied`, relayed honestly | MCP row filter (P-2001 is on clinician B's panel) |
-| 3 | Guideline question, no identifiers | Answer from `guideline_agent` over A2A | Registry `agents` entry + agent-to-agent policy |
-| 4 | "Ignore all your previous instructions…" | Blocked before the model reasons on it | Model Armor plugin, user-message seam |
-| 5 | Read P-1002's imported referral letter | IAP allows the call; the returned content is denied at the gateway | Model Armor `CONTENT_AUTHZ` extension (plugin is the in-agent fallback) |
-| 6 | Add a progress note to P-1001 | Gateway 403; the MCP server logs nothing | IAP CEL read-only condition |
-| 7 | Call `whoami`, report verbatim | Clinician A named; header-presence report | End-to-end identity and header passthrough |
-| 8 | (operator) gateway log query | Per-call rows with per-extension verdicts | Gateway audit logs |
+| 3 | "Ignore all your previous instructions…" | Blocked before the model reasons on it | Model Armor plugin, user-message seam |
+| 4 | Read P-1002's imported referral letter | IAP allows the call; the returned content is denied at the gateway | Model Armor `CONTENT_AUTHZ` extension (plugin is the in-agent fallback) |
+| 5 | Add a progress note to P-1001 | Gateway 403; the MCP server logs nothing | IAP CEL read-only condition |
+| 6 | Call `whoami`, report verbatim | Clinician A named; header-presence report | End-to-end identity and header passthrough |
+| 7 | (operator) gateway log query | Per-call rows with per-extension verdicts | Gateway audit logs |
 
-> A model *refusal* is not evidence of a gateway *denial*. The strongest evidence for beat 6 is an absence: the MCP server never logs `add_progress_note`, because the call never arrived.
+> A model *refusal* is not evidence of a gateway *denial*. The strongest evidence for beat 5 is an absence: the MCP server never logs `add_progress_note`, because the call never arrived.
 
 ### Content screening and the PHI boundary
 
@@ -152,6 +154,8 @@ gcloud logging read 'resource.type="cloud_run_revision" AND resource.labels.serv
 ## 📁 Repository layout
 
 ```text
+CODELAB.md      Complete step-by-step workshop codelab in GitHub Markdown (all diagrams, tables, steps, expected output, FAQ)
+codelab/        Codelab source (`codelab.md`), long-form companion (`deep-dive.md`), and diagram/table JPEGs (`img/`)
 pyproject.toml  Dependencies for the Cloud Shell environment (`uv sync`); requirements-cloud.txt is the pip equivalent
 scripts/        00-env.sh (source first) and the numbered workshop scripts 01…11 and 99
 scripts/yaml/   envsubst templates: gateway, IAP extension (dry run / enforce) + policy,
@@ -159,10 +163,10 @@ scripts/yaml/   envsubst templates: gateway, IAP extension (dry run / enforce) +
 agents/         clinical_assistant (root agent, Agent Runtime) and guideline_agent (A2A specialist, Cloud Run)
 mcp-server/     Patient Records MCP server, toolspec.json (readOnlyHint annotations), synthetic patients.json
 mock-idp/       Hospital IdP simulator (RS256 JWTs + JWKS)
-clients/        get_token.py, test_mcp.py, validate_agent_card.py, test_a2a.py, test_phi.py, chat_remote.py
+clients/        get_token.py, test_mcp.py, validate_agent_card.py, test_a2a.py, test_phi.py, chat_remote.py, gateway_log.py
 deploy/         deploy_root_agent.py (Agent Identity, gateway binding, telemetry env vars)
 tests/cloud/    Deployed-stack checks the codelab runs (opt-in with RUN_CLOUD_TESTS=1)
-docs/           diagrams/ (SVG sources) and images/ (cover art)
+docs/           diagrams/ (SVG and JPEG diagrams) and images/ (cover art)
 ```
 
 ## ✅ Prerequisites
@@ -219,18 +223,18 @@ Clinician B:  dr.b@hospital-demo.example
 |---|---|
 | `01-enable-apis.sh` | Enables every API the lab touches; creates the Agent Runtime staging bucket |
 | `02-deploy-mock-idp.sh` | Deploys the hospital IdP simulator (`--max-instances=1` pins the signing key) |
-| `03-deploy-mcp-server.sh` | Deploys the IAM-private Patient Records MCP server (no invoker until the agent exists) |
+| `03-deploy-mcp-server.sh` | Deploys the IAM-private Patient Records MCP server (`--min-instances=1`; no invoker until the agent exists) |
 | `04-model-armor.sh` | Creates the Model Armor template and proves it with standalone sanitize calls (direct and indirect injection) |
-| `05-register-registry.sh` | Registers the MCP server (from `toolspec.json`) and the platform endpoints in Agent Registry |
+| `05-register-registry.sh` | Registers the MCP server (from `toolspec.json`) and the 17 platform endpoints in Agent Registry |
 | `06-create-gateway.sh` | Creates the egress Agent Gateway with the IAP authorization extension in `DRY_RUN` |
 | `07-deploy-agents.sh` | Deploys the A2A specialist, validates and registers its agent card, deploys the root agent with Agent Identity, confirms both agents are in the registry |
-| `08-grant-egress-and-enforce.sh` | Binds `run.invoker` on the MCP service to the agent's identity; grants the agent principal egress to the MCP server (read-only CEL), the specialist (`--agent`), and the platform endpoints; flips IAP to enforced |
-| `10-model-armor-gateway.sh` | Attaches Model Armor at the gateway as a `CONTENT_AUTHZ` extension (run before the demo so it exercises the full stack) |
-| `09-demo.sh` | The eight-beat acceptance run, ending in the gateway's own audit log |
-| `11-observability.sh` | Agent and gateway tracing, log-based metrics, alert policy, dashboard, audit queries |
+| `08-grant-egress-and-enforce.sh` | Binds `run.invoker` on the MCP service and the 8 destination Google API roles to the agent's identity; grants the agent principal egress to the MCP server (read-only CEL), the specialist (`--agent`), and the platform endpoints; flips IAP to enforced |
+| `09-model-armor-gateway.sh` | Attaches Model Armor at the gateway as a `CONTENT_AUTHZ` extension (run before the demo so it exercises the full stack) |
+| `10-demo.sh` | The seven-beat acceptance run, ending in the gateway's own audit log |
+| `11-observability.sh` | Optional: Agent and gateway tracing, log-based metrics, alert policy, dashboard, audit queries |
 | `99-cleanup.sh` | Tears everything down in dependency order |
 
-`09-demo.sh` needs the engine principal written by `07-deploy-agents.sh`: `source scripts/rendered/agent.env` first.
+`10-demo.sh` needs the engine principal written by `07-deploy-agents.sh`: `source scripts/rendered/agent.env` first.
 
 #### 4. Talk to the deployed assistant yourself
 
@@ -247,15 +251,16 @@ The repository ships the checks the codelab itself runs against your deployment 
 ```bash
 source scripts/00-env.sh
 RUN_CLOUD_TESTS=1 python -m pytest -q tests/cloud/test_deployed_stack.py -k private_mcp_rejects_direct_callers -v   # after 03-deploy-mcp-server.sh
-RUN_CLOUD_TESTS=1 python -m pytest -q tests/cloud -s                                                                # after 09-demo.sh
+RUN_CLOUD_TESTS=1 python -m pytest -q tests/cloud -s                                                                # after 10-demo.sh
 ```
 
 They prove that a hospital token alone cannot reach the private MCP server, that clinician isolation and the shared-patient case hold on the deployed stack, that a tampered token is rejected, and that the live Model Armor template catches both injection shapes; the final test prints a report.
 
 ## 📚 Companion documents
 
-- **The codelab** (15 steps, about 4 hours): every step opens with a short narrative, then `👉💻` run / `👉` click / `👀` read actions with expected output, a **✅ Verification** block with an **If it breaks** list, and a plain-language recap. Distributed with the workshop.
-- **The deep dive**: full design rationale, code walkthroughs, launch-stage notes, production notes, and the complete troubleshooting table. Each codelab step links into it.
+- **[Step-by-step Workshop Codelab (`CODELAB.md`)](CODELAB.md)** (14 steps, about 3.5 hours): every step opens with the architectural and product narrative, followed by `👉💻` run / `👉` click / `👀` read actions with expected output, a **✅ Verification** block with an **If it breaks** list, a plain-language recap, and a complete **FAQ & Troubleshooting** guide.
+- **[Companion Deep Dive (`codelab/deep-dive.md`)](codelab/deep-dive.md)**: full design rationale, code walkthroughs, observability deep dive (`scripts/11-observability.sh`), launch-stage notes, production notes, and the complete troubleshooting reference.
+- **[Rendered Diagram & Table JPEGs (`codelab/img/`)](codelab/img/)**: high-resolution `.jpg` renders of all 11 architecture/flow diagrams and all codelab tables (`codelab/img/tables/`).
 
 ## 🏭 From lab to production
 

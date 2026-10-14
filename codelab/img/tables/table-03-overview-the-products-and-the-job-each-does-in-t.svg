@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1156" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="1156" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Overview — The products, and the job each does in this story</text>
+  <rect x="32" y="84" width="1216" height="1040" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Product</text>
+  <text x="207" y="115" font-size="15" font-weight="700" fill="#FFFFFF">What it is</text>
+  <text x="685" y="115" font-size="15" font-weight="700" fill="#FFFFFF">The job it does here</text>
+  <text x="1113" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Task</text>
+  <rect x="33" y="134" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">Cloud Run</text>
+  <text x="207" y="165" font-size="15" font-weight="400" fill="#2B3A48">Serverless containers with an HTTPS URL and</text>
+  <text x="207" y="187" font-size="15" font-weight="400" fill="#2B3A48">per-service IAM</text>
+  <text x="685" y="165" font-size="15" font-weight="400" fill="#2B3A48">Hosts the hospital IdP simulator, the</text>
+  <text x="685" y="187" font-size="15" font-weight="400" fill="#2B3A48">records service, and the A2A specialist</text>
+  <text x="1113" y="165" font-size="15" font-weight="400" fill="#2B3A48">2, 3, 8</text>
+  <rect x="33" y="206" width="1214" height="94" fill="#F4F7FA"/>
+  <line x1="32" y1="206" x2="1248" y2="206" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="237" font-size="15" font-weight="600" fill="#123247">Model Context</text>
+  <text x="48" y="259" font-size="15" font-weight="600" fill="#123247">Protocol (MCP)</text>
+  <text x="207" y="237" font-size="15" font-weight="400" fill="#2B3A48">Open standard for exposing tools to agents over</text>
+  <text x="207" y="259" font-size="15" font-weight="400" fill="#2B3A48">JSON-RPC (initialize, tools/list, tools/call),</text>
+  <text x="207" y="281" font-size="15" font-weight="400" fill="#2B3A48">with per-tool annotations such as readOnlyHint</text>
+  <text x="685" y="237" font-size="15" font-weight="400" fill="#2B3A48">The records service is an MCP server, so the</text>
+  <text x="685" y="259" font-size="15" font-weight="400" fill="#2B3A48">agent, the registry, and the gateway all</text>
+  <text x="685" y="281" font-size="15" font-weight="400" fill="#2B3A48">understand the same tool catalog</text>
+  <text x="1113" y="237" font-size="15" font-weight="400" fill="#2B3A48">3</text>
+  <rect x="33" y="300" width="1214" height="116" fill="#FFFFFF"/>
+  <line x1="32" y1="300" x2="1248" y2="300" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="331" font-size="15" font-weight="600" fill="#123247">Model Armor</text>
+  <text x="207" y="331" font-size="15" font-weight="400" fill="#2B3A48">Managed screening service:</text>
+  <text x="207" y="353" font-size="15" font-weight="400" fill="#2B3A48">prompt-injection/jailbreak, malicious-URI,</text>
+  <text x="207" y="375" font-size="15" font-weight="400" fill="#2B3A48">sensitive-data, and content filters behind two</text>
+  <text x="207" y="397" font-size="15" font-weight="400" fill="#2B3A48">sanitize* APIs</text>
+  <text x="685" y="331" font-size="15" font-weight="400" fill="#2B3A48">Screens the clinician&#x27;s prompt, every tool</text>
+  <text x="685" y="353" font-size="15" font-weight="400" fill="#2B3A48">result, and the model&#x27;s answer; later</text>
+  <text x="685" y="375" font-size="15" font-weight="400" fill="#2B3A48">screens tool traffic at the gateway</text>
+  <text x="1113" y="331" font-size="15" font-weight="400" fill="#2B3A48">4, 10</text>
+  <rect x="33" y="416" width="1214" height="94" fill="#F4F7FA"/>
+  <line x1="32" y1="416" x2="1248" y2="416" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="447" font-size="15" font-weight="600" fill="#123247">Agent2Agent</text>
+  <text x="48" y="469" font-size="15" font-weight="600" fill="#123247">(A2A)</text>
+  <text x="207" y="447" font-size="15" font-weight="400" fill="#2B3A48">Open protocol for agent-to-agent calls: an agent</text>
+  <text x="207" y="469" font-size="15" font-weight="400" fill="#2B3A48">card at /.well-known/agent-card.json plus JSON-RPC</text>
+  <text x="207" y="491" font-size="15" font-weight="400" fill="#2B3A48">message/send</text>
+  <text x="685" y="447" font-size="15" font-weight="400" fill="#2B3A48">How the assistant delegates medicine</text>
+  <text x="685" y="469" font-size="15" font-weight="400" fill="#2B3A48">questions to a separately governed</text>
+  <text x="685" y="491" font-size="15" font-weight="400" fill="#2B3A48">specialist</text>
+  <text x="1113" y="447" font-size="15" font-weight="400" fill="#2B3A48">5, 8</text>
+  <rect x="33" y="510" width="1214" height="94" fill="#FFFFFF"/>
+  <line x1="32" y1="510" x2="1248" y2="510" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="541" font-size="15" font-weight="600" fill="#123247">Agent</text>
+  <text x="48" y="563" font-size="15" font-weight="600" fill="#123247">Development</text>
+  <text x="48" y="585" font-size="15" font-weight="600" fill="#123247">Kit (ADK)</text>
+  <text x="207" y="541" font-size="15" font-weight="400" fill="#2B3A48">Google&#x27;s open-source agent framework;</text>
+  <text x="207" y="563" font-size="15" font-weight="400" fill="#2B3A48">RemoteA2aAgent consumes cards, to_a2a() publishes</text>
+  <text x="207" y="585" font-size="15" font-weight="400" fill="#2B3A48">them, plugins add lifecycle callbacks</text>
+  <text x="685" y="541" font-size="15" font-weight="400" fill="#2B3A48">Both agents are ADK agents; the Model Armor</text>
+  <text x="685" y="563" font-size="15" font-weight="400" fill="#2B3A48">plugin and the registry header_provider are</text>
+  <text x="685" y="585" font-size="15" font-weight="400" fill="#2B3A48">ADK hooks</text>
+  <text x="1113" y="541" font-size="15" font-weight="400" fill="#2B3A48">4, 8</text>
+  <rect x="33" y="604" width="1214" height="94" fill="#F4F7FA"/>
+  <line x1="32" y1="604" x2="1248" y2="604" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="635" font-size="15" font-weight="600" fill="#123247">Agent Registry</text>
+  <text x="207" y="635" font-size="15" font-weight="400" fill="#2B3A48">Regional catalog in Agent Platform with three</text>
+  <text x="207" y="657" font-size="15" font-weight="400" fill="#2B3A48">collections: agents, mcpServers, endpoints</text>
+  <text x="685" y="635" font-size="15" font-weight="400" fill="#2B3A48">Discovery catalog, the gateway&#x27;s allowlist,</text>
+  <text x="685" y="657" font-size="15" font-weight="400" fill="#2B3A48">and the object egress policies bind to, all</text>
+  <text x="685" y="679" font-size="15" font-weight="400" fill="#2B3A48">at once</text>
+  <text x="1113" y="635" font-size="15" font-weight="400" fill="#2B3A48">6, 8</text>
+  <rect x="33" y="698" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="698" x2="1248" y2="698" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="729" font-size="15" font-weight="600" fill="#123247">Agent Gateway</text>
+  <text x="207" y="729" font-size="15" font-weight="400" fill="#2B3A48">Google-managed, default-deny egress proxy bound to</text>
+  <text x="207" y="751" font-size="15" font-weight="400" fill="#2B3A48">an agent; parses MCP and A2A traffic</text>
+  <text x="685" y="729" font-size="15" font-weight="400" fill="#2B3A48">The checkpoint every outbound call from the</text>
+  <text x="685" y="751" font-size="15" font-weight="400" fill="#2B3A48">assistant passes through</text>
+  <text x="1113" y="729" font-size="15" font-weight="400" fill="#2B3A48">7</text>
+  <rect x="33" y="770" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="770" x2="1248" y2="770" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="801" font-size="15" font-weight="600" fill="#123247">Service</text>
+  <text x="48" y="823" font-size="15" font-weight="600" fill="#123247">Extensions</text>
+  <text x="207" y="801" font-size="15" font-weight="400" fill="#2B3A48">Callouts the gateway makes to a decision service,</text>
+  <text x="207" y="823" font-size="15" font-weight="400" fill="#2B3A48">with REQUEST_AUTHZ and CONTENT_AUTHZ profiles</text>
+  <text x="685" y="801" font-size="15" font-weight="400" fill="#2B3A48">How IAP and Model Armor are plugged into the</text>
+  <text x="685" y="823" font-size="15" font-weight="400" fill="#2B3A48">gateway</text>
+  <text x="1113" y="801" font-size="15" font-weight="400" fill="#2B3A48">7, 10</text>
+  <rect x="33" y="842" width="1214" height="94" fill="#FFFFFF"/>
+  <line x1="32" y1="842" x2="1248" y2="842" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="873" font-size="15" font-weight="600" fill="#123247">Identity-Aware</text>
+  <text x="48" y="895" font-size="15" font-weight="600" fill="#123247">Proxy (IAP)</text>
+  <text x="207" y="873" font-size="15" font-weight="400" fill="#2B3A48">Here, the decision engine behind the gateway&#x27;s</text>
+  <text x="207" y="895" font-size="15" font-weight="400" fill="#2B3A48">authorization extension, not a login page</text>
+  <text x="685" y="873" font-size="15" font-weight="400" fill="#2B3A48">Answers ALLOW/DENY per request from the</text>
+  <text x="685" y="895" font-size="15" font-weight="400" fill="#2B3A48">agent&#x27;s identity, roles/iap.egressor, and a</text>
+  <text x="685" y="917" font-size="15" font-weight="400" fill="#2B3A48">per-tool CEL condition</text>
+  <text x="1113" y="873" font-size="15" font-weight="400" fill="#2B3A48">7, 9</text>
+  <rect x="33" y="936" width="1214" height="94" fill="#F4F7FA"/>
+  <line x1="32" y1="936" x2="1248" y2="936" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="967" font-size="15" font-weight="600" fill="#123247">Agent Runtime</text>
+  <text x="48" y="989" font-size="15" font-weight="600" fill="#123247">+ Agent</text>
+  <text x="48" y="1011" font-size="15" font-weight="600" fill="#123247">Identity</text>
+  <text x="207" y="967" font-size="15" font-weight="400" fill="#2B3A48">Managed runtime for ADK agents; each deployment</text>
+  <text x="207" y="989" font-size="15" font-weight="400" fill="#2B3A48">can be minted a SPIFFE principal with a</text>
+  <text x="207" y="1011" font-size="15" font-weight="400" fill="#2B3A48">platform-managed certificate</text>
+  <text x="685" y="967" font-size="15" font-weight="400" fill="#2B3A48">Where the assistant runs, and the provable,</text>
+  <text x="685" y="989" font-size="15" font-weight="400" fill="#2B3A48">non-impersonatable name that policies bind</text>
+  <text x="685" y="1011" font-size="15" font-weight="400" fill="#2B3A48">to</text>
+  <text x="1113" y="967" font-size="15" font-weight="400" fill="#2B3A48">8</text>
+  <rect x="33" y="1030" width="1214" height="93" rx="9" fill="#FFFFFF"/>
+  <rect x="33" y="1030" width="1214" height="10" fill="#FFFFFF"/>
+  <line x1="32" y1="1030" x2="1248" y2="1030" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="1061" font-size="15" font-weight="600" fill="#123247">Cloud Trace,</text>
+  <text x="48" y="1083" font-size="15" font-weight="600" fill="#123247">Logging,</text>
+  <text x="48" y="1105" font-size="15" font-weight="600" fill="#123247">Monitoring</text>
+  <text x="207" y="1061" font-size="15" font-weight="400" fill="#2B3A48">OpenTelemetry traces, request/audit/application</text>
+  <text x="207" y="1083" font-size="15" font-weight="400" fill="#2B3A48">logs with Log Analytics, metrics, dashboards,</text>
+  <text x="207" y="1105" font-size="15" font-weight="400" fill="#2B3A48">alerts</text>
+  <text x="685" y="1061" font-size="15" font-weight="400" fill="#2B3A48">Proof, after the fact, of which agent called</text>
+  <text x="685" y="1083" font-size="15" font-weight="400" fill="#2B3A48">which tool for which clinician, with message</text>
+  <text x="685" y="1105" font-size="15" font-weight="400" fill="#2B3A48">content never exported</text>
+  <text x="1113" y="1061" font-size="15" font-weight="400" fill="#2B3A48">11</text>
+  <line x1="191" y1="84" x2="191" y2="1124" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="669" y1="84" x2="669" y2="1124" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="1097" y1="84" x2="1097" y2="1124" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="1040" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

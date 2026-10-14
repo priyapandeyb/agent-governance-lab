@@ -13,7 +13,7 @@
 <rect x="40" y="220" width="184" height="82" rx="10" fill="#e6edf6"/>
 <text x="60" y="266" font-size="17" font-weight="700" fill="#294d77">GOOGLE APIs</text>
 <text x="250" y="251" font-size="19" font-weight="700" fill="#123247">Google OAuth access token</text>
-<text x="250" y="279" font-size="16" fill="#4b6472">Receiver: Google APIs such as Model Armor and Agent Runtime; use ADC/OAuth.</text>
+<text x="250" y="279" font-size="16" fill="#4b6472">Receiver: Google APIs (Model Armor, Vertex AI, Registry, Telemetry); plain OAuth token across gateway TLS.</text>
 <rect x="40" y="320" width="1040" height="82" rx="10" fill="white" stroke="#d4dfe5"/>
 <rect x="40" y="320" width="184" height="82" rx="10" fill="#e6edf6"/>
 <text x="60" y="366" font-size="17" font-weight="700" fill="#294d77">CLOUD RUN</text>

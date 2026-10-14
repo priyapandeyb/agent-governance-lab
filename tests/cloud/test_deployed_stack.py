@@ -8,7 +8,7 @@ API.
 
 The gateway-enforced pairs (write-tool block, default-deny exfiltration,
 rogue A2A) act on the AGENT's traffic and require an actual attempt plus
-gateway evidence. The 09-demo.sh prompts cover the write attempt; the shipped
+gateway evidence. The 10-demo.sh prompts cover the write attempt; the shipped
 agent has no arbitrary URL or rogue-delegate tool. This file does not
 assert gateway enforcement; see the report footer and the deep dive's test matrix.
 """

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 266" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="266" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Overview — Two clinicians, five patients</text>
+  <rect x="32" y="84" width="1216" height="150" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Persona</text>
+  <text x="387" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Signs in as</text>
+  <text x="898" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Care-team panel</text>
+  <rect x="33" y="134" width="1214" height="50" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">Clinician A (you)</text>
+  <text x="387" y="165" font-size="15" font-weight="400" fill="#2B3A48">$CLINICIAN_A_EMAIL: your own gcloud account by default</text>
+  <text x="898" y="165" font-size="15" font-weight="400" fill="#2B3A48">P-1001, P-1002, P-1003</text>
+  <rect x="33" y="184" width="1214" height="49" rx="9" fill="#F4F7FA"/>
+  <rect x="33" y="184" width="1214" height="10" fill="#F4F7FA"/>
+  <line x1="32" y1="184" x2="1248" y2="184" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="215" font-size="15" font-weight="600" fill="#123247">Clinician B (a colleague)</text>
+  <text x="387" y="215" font-size="15" font-weight="400" fill="#2B3A48">dr.b@hospital-demo.example</text>
+  <text x="898" y="215" font-size="15" font-weight="400" fill="#2B3A48">P-2001, P-2002, P-1003 (shared)</text>
+  <line x1="371" y1="84" x2="371" y2="234" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="882" y1="84" x2="882" y2="234" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="150" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

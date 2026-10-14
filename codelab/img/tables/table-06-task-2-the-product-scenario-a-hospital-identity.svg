@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 404" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="404" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 2: The hospital identity: deploy the mock IdP — The product scenario: a hospital identity that Google does not own</text>
+  <rect x="32" y="84" width="1216" height="288" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">What an OIDC IdP provides</text>
+  <text x="443" y="115" font-size="15" font-weight="700" fill="#FFFFFF">In this lab</text>
+  <text x="808" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Why the records service needs it</text>
+  <rect x="33" y="134" width="1214" height="94" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">Mints a signed token for an authenticated</text>
+  <text x="48" y="187" font-size="15" font-weight="600" fill="#123247">user, with claims (iss, sub, email, aud,</text>
+  <text x="48" y="209" font-size="15" font-weight="600" fill="#123247">exp)</text>
+  <text x="443" y="165" font-size="15" font-weight="400" fill="#2B3A48">POST /token returns an RS256-signed</text>
+  <text x="443" y="187" font-size="15" font-weight="400" fill="#2B3A48">JWT with aud: patient-records-mcp and</text>
+  <text x="443" y="209" font-size="15" font-weight="400" fill="#2B3A48">a one-hour exp</text>
+  <text x="808" y="165" font-size="15" font-weight="400" fill="#2B3A48">The email claim drives the care-team check; aud</text>
+  <text x="808" y="187" font-size="15" font-weight="400" fill="#2B3A48">stops a token minted for another system from</text>
+  <text x="808" y="209" font-size="15" font-weight="400" fill="#2B3A48">being replayed here</text>
+  <rect x="33" y="228" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="228" x2="1248" y2="228" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="259" font-size="15" font-weight="600" fill="#123247">Publishes its public signing keys at</text>
+  <text x="48" y="281" font-size="15" font-weight="600" fill="#123247">/.well-known/jwks.json (the JWKS)</text>
+  <text x="443" y="259" font-size="15" font-weight="400" fill="#2B3A48">One key, with a kid, alg: RS256, use:</text>
+  <text x="443" y="281" font-size="15" font-weight="400" fill="#2B3A48">sig</text>
+  <text x="808" y="259" font-size="15" font-weight="400" fill="#2B3A48">Any relying party can verify a signature without</text>
+  <text x="808" y="281" font-size="15" font-weight="400" fill="#2B3A48">ever holding the private key</text>
+  <rect x="33" y="300" width="1214" height="71" rx="9" fill="#FFFFFF"/>
+  <rect x="33" y="300" width="1214" height="10" fill="#FFFFFF"/>
+  <line x1="32" y1="300" x2="1248" y2="300" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="331" font-size="15" font-weight="600" fill="#123247">Publishes discovery metadata at</text>
+  <text x="48" y="353" font-size="15" font-weight="600" fill="#123247">/.well-known/openid-configuration</text>
+  <text x="443" y="331" font-size="15" font-weight="400" fill="#2B3A48">Issuer, token endpoint, JWKS URL</text>
+  <text x="808" y="331" font-size="15" font-weight="400" fill="#2B3A48">Lets a verifier find the keys from the issuer</text>
+  <text x="808" y="353" font-size="15" font-weight="400" fill="#2B3A48">alone</text>
+  <line x1="427" y1="84" x2="427" y2="372" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="792" y1="84" x2="792" y2="372" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="288" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>

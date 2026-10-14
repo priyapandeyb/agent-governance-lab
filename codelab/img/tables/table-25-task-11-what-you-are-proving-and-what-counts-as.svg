@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 432" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1280" height="432" fill="#FBFCFE"/>
+  <text x="32" y="58" font-size="18" font-weight="700" fill="#1A2430">Task 11: The acceptance run: seven beats — What you are proving, and what counts as evidence</text>
+  <rect x="32" y="84" width="1216" height="316" rx="10" fill="#FFFFFF" stroke="#C9D4DE" stroke-width="1.5"/>
+  <rect x="32" y="84" width="1216" height="50" rx="10" fill="#1A2430"/>
+  <rect x="32" y="124" width="1216" height="10" fill="#1A2430"/>
+  <text x="48" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Claim</text>
+  <text x="293" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Acceptable evidence</text>
+  <text x="945" y="115" font-size="15" font-weight="700" fill="#FFFFFF">Not evidence</text>
+  <rect x="33" y="134" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="134" x2="1248" y2="134" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="165" font-size="15" font-weight="600" fill="#123247">The gateway denied a</text>
+  <text x="48" y="187" font-size="15" font-weight="600" fill="#123247">call</text>
+  <text x="293" y="165" font-size="15" font-weight="400" fill="#2B3A48">A gateway log row with httpRequest.status: 403 and the IAP extension&#x27;s</text>
+  <text x="293" y="187" font-size="15" font-weight="400" fill="#2B3A48">DENIED; an IAP audit row with granted: false</text>
+  <text x="945" y="165" font-size="15" font-weight="400" fill="#2B3A48">The assistant saying &quot;I can&#x27;t do</text>
+  <text x="945" y="187" font-size="15" font-weight="400" fill="#2B3A48">that&quot;</text>
+  <rect x="33" y="206" width="1214" height="72" fill="#F4F7FA"/>
+  <line x1="32" y1="206" x2="1248" y2="206" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="237" font-size="15" font-weight="600" fill="#123247">The records service</text>
+  <text x="48" y="259" font-size="15" font-weight="600" fill="#123247">denied a row</text>
+  <text x="293" y="237" font-size="15" font-weight="400" fill="#2B3A48">A tool result with status: access_denied relayed by the assistant; an</text>
+  <text x="293" y="259" font-size="15" font-weight="400" fill="#2B3A48">Authenticated clinician log line naming the right person</text>
+  <text x="945" y="237" font-size="15" font-weight="400" fill="#2B3A48">A model refusal before any tool</text>
+  <text x="945" y="259" font-size="15" font-weight="400" fill="#2B3A48">ran</text>
+  <rect x="33" y="278" width="1214" height="72" fill="#FFFFFF"/>
+  <line x1="32" y1="278" x2="1248" y2="278" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="309" font-size="15" font-weight="600" fill="#123247">Model Armor blocked</text>
+  <text x="48" y="331" font-size="15" font-weight="600" fill="#123247">content</text>
+  <text x="293" y="309" font-size="15" font-weight="400" fill="#2B3A48">A MATCH_FOUND verdict: a plugin WARNING log, or the Model Armor</text>
+  <text x="293" y="331" font-size="15" font-weight="400" fill="#2B3A48">extension&#x27;s DENIED in the gateway row</text>
+  <text x="945" y="309" font-size="15" font-weight="400" fill="#2B3A48">The assistant paraphrasing the</text>
+  <text x="945" y="331" font-size="15" font-weight="400" fill="#2B3A48">letter cautiously</text>
+  <rect x="33" y="350" width="1214" height="49" rx="9" fill="#F4F7FA"/>
+  <rect x="33" y="350" width="1214" height="10" fill="#F4F7FA"/>
+  <line x1="32" y1="350" x2="1248" y2="350" stroke="#D9E2EC" stroke-width="1"/>
+  <text x="48" y="381" font-size="15" font-weight="600" fill="#123247">A write never happened</text>
+  <text x="293" y="381" font-size="15" font-weight="400" fill="#2B3A48">Absence: zero add_progress_note lines in the records service log</text>
+  <text x="945" y="381" font-size="15" font-weight="400" fill="#2B3A48">A polite apology</text>
+  <line x1="277" y1="84" x2="277" y2="400" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <line x1="929" y1="84" x2="929" y2="400" stroke="#D9E2EC" stroke-width="1" stroke-opacity="0.7"/>
+  <rect x="32" y="84" width="1216" height="316" rx="10" fill="none" stroke="#C9D4DE" stroke-width="1.5"/>
+</svg>
